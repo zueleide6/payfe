@@ -1,0 +1,92 @@
+.loading {
+    position: relative
+}
+
+.loading:before {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 50%;
+    z-index: 3;
+    width: 500%;
+    margin-left: -250%;
+    animation: phAnimation 2s linear infinite;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 0) 54%) 50% 50%
+}
+
+[dir=rtl] .loading:before {
+    margin-left: unset;
+    margin-right: -250%;
+    animation: rtlPhAnimation 2s linear infinite
+}
+
+.loading--beige:before {
+    background: linear-gradient(to right, rgba(243, 241, 232, 0) 46%, rgba(243, 241, 232, .8) 50%, rgba(243, 241, 232, 0) 54%) 50% 50%
+}
+
+.loading--violet:before {
+    background: linear-gradient(to right, rgba(164, 167, 227, 0) 46%, rgba(164, 167, 227, .8) 50%, rgba(164, 167, 227, 0) 54%) 50% 50%
+}
+
+.loading--black:before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 46%, rgba(0, 0, 0, .8) 50%, rgba(0, 0, 0, 0) 54%) 50% 50%
+}
+
+.loading__item {
+    position: relative
+}
+
+.loading__item:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #f5f5f5;
+    z-index: 1
+}
+
+.loading--beige .loading__item:after {
+    background-color: #e9e6d9
+}
+
+.loading--violet .loading__item:after {
+    background-color: #9a9ddb
+}
+
+.loading--black .loading__item:after {
+    background-color: #333
+}
+
+.loading--grey .loading__item:after {
+    background-color: #e5e5e5
+}
+
+.loading__item--rounded:after {
+    border-radius: 6px
+}
+
+.loading__item--round:after {
+    border-radius: 50%
+}
+
+.loading__item--bordered:after {
+    inset: -2px
+}
+
+@keyframes phAnimation {
+    0% {
+        transform: translate3d(-30%, 0, 0)
+    }
+
+    to {
+        transform: translate3d(30%, 0, 0)
+    }
+}
+
+@keyframes rtlPhAnimation {
+    0% {
+        transform: translate3d(30%, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-30%, 0, 0)
+    }
+}

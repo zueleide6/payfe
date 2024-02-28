@@ -1,0 +1,63 @@
+.auth-flash-msg {
+    position: relative;
+    padding: 8px 32px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    white-space: pre-line;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 16px
+}
+
+.auth-flash-msg--info {
+    background-color: #0000001a;
+    color: #000
+}
+
+.auth-flash-msg--success {
+    background-color: #47a13626;
+    color: #47a136
+}
+
+.auth-flash-msg--warning {
+    background-color: #e79c2c26;
+    color: #e79c2c
+}
+
+.auth-flash-msg--danger {
+    background-color: #e73c4026;
+    color: #e73c40
+}
+
+.auth-flash-msg__close {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    transition: opacity .2s linear
+}
+
+[dir=rtl] .auth-flash-msg__close {
+    left: 4px;
+    right: unset
+}
+
+.auth-flash-msg__close:after {
+    content: "";
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px
+}
+
+.auth-flash-msg__close:hover {
+    opacity: .6
+}

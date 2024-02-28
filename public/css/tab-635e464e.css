@@ -1,0 +1,1672 @@
+.sales-funnel-actions {
+    position: relative;
+    margin-top: 32px
+}
+
+.sales-funnel-actions__back,
+.sales-funnel-actions__accessory {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center
+}
+
+.sales-funnel-actions__back {
+    left: 0
+}
+
+[dir=rtl] .sales-funnel-actions__back {
+    right: 0;
+    left: unset
+}
+
+.sales-funnel-actions__submit {
+    display: flex;
+    justify-content: center
+}
+
+.sales-funnel-actions__accessory {
+    right: 0
+}
+
+[dir=rtl] .sales-funnel-actions__accessory {
+    left: 0;
+    right: unset
+}
+
+.sales-funnel-actions__cancel {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px
+}
+
+.sales-funnel-actions__disclaimer {
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    color: #b2b2b2;
+    margin-top: 24px
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-actions {
+        margin-top: 56px;
+        margin-bottom: 32px
+    }
+
+    .sales-funnel-actions__cancel {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        margin: 0
+    }
+
+    [dir=rtl] .sales-funnel-actions__cancel {
+        right: 0;
+        left: unset
+    }
+}
+
+.sales-funnel-affilate {
+    max-width: 416px;
+    margin: auto;
+    padding: 20px 16px 12px
+}
+
+.sales-funnel-affilate__header {
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center
+}
+
+.sales-funnel-affilate__body {
+    margin-top: 20px;
+    text-align: center
+}
+
+.sales-funnel-affilate__body p {
+    line-height: 1.5
+}
+
+.sales-funnel-affilate__link-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 416px;
+    box-shadow: 0 0 0 2px #0000001a;
+    border-radius: 6px;
+    height: 48px;
+    text-align: left;
+    display: flex;
+    background-color: #fff;
+    padding-right: 50px;
+    cursor: copy;
+    transition: box-shadow .2s linear
+}
+
+[dir=rtl] .sales-funnel-affilate__link-wrapper {
+    text-align: right;
+    padding-left: 50px;
+    padding-right: unset
+}
+
+.sales-funnel-affilate__link-wrapper:hover {
+    box-shadow: 0 0 0 2px #0003
+}
+
+.sales-funnel-affilate__link-wrapper:before {
+    content: "";
+    display: block;
+    opacity: 0;
+    box-shadow: 0 2px 4px #00000026;
+    border-radius: 2px;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 10px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    padding: 0 6px;
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: opacity .2s linear
+}
+
+.sales-funnel-affilate__link-wrapper:hover:before {
+    content: attr(data-hover-label);
+    background-color: #000;
+    opacity: .8
+}
+
+.sales-funnel-affilate__link-wrapper.is-coppied:before {
+    content: attr(data-copy-label);
+    background-color: #47a136;
+    opacity: .8
+}
+
+.sales-funnel-affilate p+.sales-funnel-affilate__link-wrapper {
+    margin-top: 8px
+}
+
+.sales-funnel-affilate__link-input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1;
+    pointer-events: none;
+    -webkit-user-select: none;
+    user-select: none
+}
+
+.sales-funnel-affilate__link-wrapper .icon {
+    position: absolute;
+    top: 16px;
+    right: 16px
+}
+
+[dir=rtl] .sales-funnel-affilate__link-wrapper .icon {
+    left: 16px;
+    right: unset
+}
+
+.sales-funnel-affilate__footer {
+    margin-top: 24px;
+    line-height: 1.5;
+    text-align: center
+}
+
+.sales-funnel-affilate__social {
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+    margin: 0 -8px
+}
+
+.sales-funnel-affilate__social-item {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    color: #fff;
+    margin: 0 8px;
+    transition: background-color .2s linear
+}
+
+.sales-funnel-affilate__social-item--twitter {
+    background-color: #1dafea
+}
+
+.sales-funnel-affilate__social-item--twitter:hover {
+    background-color: #37b1ff
+}
+
+.sales-funnel-affilate__social-item--twitter:active {
+    background-color: #009ad9
+}
+
+.sales-funnel-affilate__social-item--fb-messenger {
+    background-color: #007aff
+}
+
+.sales-funnel-affilate__social-item--fb-messenger:hover {
+    background-color: #3093ff
+}
+
+.sales-funnel-affilate__social-item--fb-messenger:active {
+    background-color: #0070ea
+}
+
+.sales-funnel-affilate__social-item--facebook {
+    background-color: #3c5a96
+}
+
+.sales-funnel-affilate__social-item--facebook:hover {
+    background-color: #507ac7
+}
+
+.sales-funnel-affilate__social-item--facebook:active {
+    background-color: #324b7d
+}
+
+.sales-funnel-affilate__social-item--email {
+    background-color: #000
+}
+
+.sales-funnel-affilate__social-item--email:hover {
+    background-color: #a4a7e3
+}
+
+.sales-funnel-affilate__social-item--email:active {
+    background-color: #9093d6
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-affilate {
+        padding: 32px 0 28px
+    }
+}
+
+.sales-funnel-bank-details {
+    position: relative;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 6px;
+    padding: 24px 16px
+}
+
+.sales-funnel-bank-details__orderal {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 20px;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+    text-align: center
+}
+
+[dir=rtl] .sales-funnel-bank-details__orderal {
+    right: 12px;
+    left: unset
+}
+
+.sales-funnel-bank-details__title {
+    max-width: 274px;
+    margin: 0 auto;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center
+}
+
+.sales-funnel-bank-details__list {
+    margin-top: 16px;
+    width: 100%
+}
+
+.sales-funnel-bank-details__item {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .08)
+}
+
+.sales-funnel-bank-details__footer {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.43;
+    max-width: 250px;
+    color: #b3b3b3
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-bank-details {
+        padding: 40px 24px 28px
+    }
+}
+
+.card-form {
+    width: 100%
+}
+
+.card-form__logos {
+    display: flex;
+    margin: 0 -6px
+}
+
+.card-form__logos-item {
+    width: 24px;
+    height: 24px;
+    margin: 0 6px
+}
+
+.card-form__logos-item img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%
+}
+
+.card-select-options {
+    position: relative
+}
+
+.card-select-options__dropdown-toggle {
+    width: 32px;
+    height: 32px;
+    color: #00000040;
+    transition: color .2s linear
+}
+
+.card-select-options__dropdown-toggle:hover {
+    color: #a4a7e3
+}
+
+.card-select-options__dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 99;
+    background-color: #fff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 6px;
+    min-width: 156px;
+    opacity: 0;
+    transform: translate3d(0, -4px, 0);
+    visibility: hidden;
+    transition: opacity .2s linear, transform .2s linear, visibility 0s linear .2s
+}
+
+[dir=rtl] .card-select-options__dropdown {
+    left: 0;
+    right: unset
+}
+
+.card-select-options__dropdown-toggle.is-open~.card-select-options__dropdown {
+    transform: translateZ(0);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .2s linear, transform .2s linear, visibility 0s linear 0s
+}
+
+.card-select-options__dropdown-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-radius: 4px;
+    text-align: left;
+    font-size: 14px;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    white-space: nowrap;
+    transition: background-color .2s linear
+}
+
+.card-select-options__dropdown-item.is-red {
+    color: #e73c40
+}
+
+.card-select-options__dropdown-item:hover {
+    background-color: #f5f5f5
+}
+
+.card-select-options__dropdown-item .icon {
+    margin-right: 8px;
+    color: #000
+}
+
+[dir=rtl] .card-select-options__dropdown-item .icon {
+    margin-left: 8px;
+    margin-right: unset
+}
+
+.sales-funnel-content {
+    margin-top: 24px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.sales-funnel-content.has-border {
+    border-radius: 6px;
+    border: 1px solid #e6e6e6;
+    padding: 16px
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-content {
+        margin-top: 40px
+    }
+}
+
+.sales-funnel-current-transaction {
+    max-width: 416px;
+    margin: auto;
+    padding: 16px
+}
+
+.sales-funnel-current-transaction__item {
+    display: flex;
+    align-items: center;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    justify-content: center
+}
+
+.sales-funnel-current-transaction__icon {
+    display: block;
+    max-width: 16px;
+    max-height: 16px;
+    margin-right: 8px
+}
+
+[dir=rtl] .sales-funnel-current-transaction__icon {
+    margin-left: 8px;
+    margin-right: unset
+}
+
+.sales-funnel-current-transaction__arrow {
+    width: 40px;
+    height: 20px;
+    text-align: center;
+    margin: 4px auto
+}
+
+.sales-funnel-current-transaction__arrow:after {
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.sales-funnel-current-transaction__arrow.is-equal:after {
+    content: ""
+}
+
+.sales-funnel-current-transaction__arrow.is-approximate:after {
+    content: ""
+}
+
+.sales-funnel-current-transaction__secondary {
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: center;
+    color: #b3b3b3;
+    margin-top: 10px
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-current-transaction {
+        padding: 24px 0
+    }
+
+    .sales-funnel-current-transaction__pair {
+        display: flex;
+        justify-content: center
+    }
+
+    .sales-funnel-current-transaction__arrow {
+        margin: 0
+    }
+
+    .sales-funnel-current-transaction__arrow.is-equal:after {
+        content: ""
+    }
+}
+
+.sales-funnel-dropzone {
+    position: relative;
+    border: 2px dashed rgba(0, 0, 0, .1);
+    border-radius: 6px;
+    padding: 40px 16px 50px;
+    width: 100%
+}
+
+.sales-funnel-dropzone.has-error {
+    border-color: #e73c40
+}
+
+.sales-funnel-dropzone.has-file {
+    padding-bottom: 24px
+}
+
+.sales-funnel-dropzone.has-dragover:after {
+    content: attr(data-placeholder);
+    position: absolute;
+    inset: -2px;
+    background-color: #000c;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    border-radius: 6px;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 24px
+}
+
+.sales-funnel-dropzone__orderal {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 20px;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+    text-align: center
+}
+
+[dir=rtl] .sales-funnel-dropzone__orderal {
+    right: 12px;
+    left: unset
+}
+
+.sales-funnel-dropzone.has-file:after {
+    content: "";
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    top: 16px;
+    right: 16px
+}
+
+[dir=rtl] .sales-funnel-dropzone.has-file:after {
+    left: 16px;
+    right: unset
+}
+
+.sales-funnel-dropzone__title {
+    max-width: 274px;
+    margin: auto;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center
+}
+
+.sales-funnel-dropzone__placeholder {
+    margin: 24px auto
+}
+
+.sales-funnel-dropzone__placeholder img {
+    display: block;
+    margin: auto
+}
+
+.sales-funnel-dropzone__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    visibility: hidden
+}
+
+.sales-funnel-dropzone__label {
+    display: block;
+    cursor: pointer;
+    text-align: center
+}
+
+.sales-funnel-dropzone__label-fake-link {
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+    transition: border-color .2s linear
+}
+
+.sales-funnel-dropzone__label:hover .sales-funnel-dropzone__label-fake-link {
+    border-color: #0009
+}
+
+.sales-funnel-dropzone.has-file .sales-funnel-dropzone__placeholder,
+.sales-funnel-dropzone.has-file .sales-funnel-dropzone__label {
+    display: none
+}
+
+.sales-funnel-dropzone__file {
+    display: flex;
+    align-items: center;
+    margin-top: 40px
+}
+
+.sales-funnel-dropzone__file-preview {
+    position: relative
+}
+
+.sales-funnel-dropzone__file-preview img {
+    border-radius: 3px;
+    max-width: 56px;
+    max-height: 56px
+}
+
+.sales-funnel-dropzone__remove-btn {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: 0;
+    transition: color .2s linear
+}
+
+[dir=rtl] .sales-funnel-dropzone__remove-btn {
+    left: -12px;
+    right: unset
+}
+
+.sales-funnel-dropzone__remove-btn:hover {
+    color: #a4a7e3
+}
+
+.sales-funnel-dropzone__remove-btn:after {
+    content: "";
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px
+}
+
+.sales-funnel-dropzone__file-name {
+    margin-left: 16px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+[dir=rtl] .sales-funnel-dropzone__file-name {
+    margin-right: 16px;
+    margin-left: unset
+}
+
+.sales-funnel-dropzone__error {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #e73c40;
+    text-align: center
+}
+
+.sales-funnel-dropzone.has-file .sales-funnel-dropzone__error {
+    text-align: left
+}
+
+[dir=rtl] .sales-funnel-dropzone.has-file .sales-funnel-dropzone__error {
+    text-align: right
+}
+
+@media screen and (max-width: 999px) {
+    .sales-funnel-dropzone__label-drop {
+        display: none
+    }
+}
+
+.sales-funnel-footer-text {
+    font-size: 14px;
+    line-height: 1.29;
+    color: #b3b3b3;
+    padding: 16px;
+    border-top: 1px solid rgba(0, 0, 0, .06)
+}
+
+.sales-funnel-footer-text:first-child {
+    border: none
+}
+
+@media screen and (max-width: 999px) {
+    .sales-funnel-footer-text {
+        text-align: center
+    }
+
+    .sales-funnel-footer-text__left+.sales-funnel-footer-text__right {
+        margin-top: 8px
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-footer-text {
+        padding: 24px
+    }
+
+    .sales-funnel-footer-text__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    .sales-funnel-footer-text__main {
+        max-width: 416px;
+        margin: 0 auto;
+        text-align: center
+    }
+
+    .sales-funnel-footer-text__right {
+        text-align: right
+    }
+}
+
+.sales-funnel-header-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+@media screen and (max-width: 999px) {
+    .sales-funnel-header-steps {
+        padding: 22px 16px;
+        margin: 0 -5px
+    }
+
+    .sales-funnel-header-steps__item {
+        font-size: 0;
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin: 0 5px;
+        background-color: #00000026
+    }
+
+    .sales-funnel-header-steps__item.is-active {
+        background-color: #000
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-header-steps {
+        padding: 20px 24px;
+        margin: 0 -12px
+    }
+
+    .sales-funnel-header-steps__item {
+        position: relative;
+        font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.14;
+        color: #b3b3b3;
+        white-space: nowrap;
+        padding: 4px 0;
+        margin: 0 12px
+    }
+
+    .sales-funnel-header-steps__item.is-active {
+        color: #000
+    }
+
+    .sales-funnel-header-steps__item+.sales-funnel-header-steps__item:before {
+        content: "";
+        font-family: icomoon !important;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 16px;
+        position: absolute;
+        left: -20px;
+        top: 4px
+    }
+
+    [dir=rtl] .sales-funnel-header-steps__item+.sales-funnel-header-steps__item:before {
+        content: "";
+        right: -20px;
+        left: unset
+    }
+}
+
+.sales-funnel-manual {
+    width: 100%;
+    border-radius: 6px;
+    background-color: #f7f7f7;
+    padding: 24px 16px
+}
+
+.sales-funnel-manual__title {
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center
+}
+
+.sales-funnel-manual__list {
+    margin-top: 40px
+}
+
+.sales-funnel-manual__item {
+    position: relative
+}
+
+.sales-funnel-manual__item+.sales-funnel-manual__item {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid #eaeaea
+}
+
+.sales-funnel-manual__item+.sales-funnel-manual__item:before {
+    content: attr(data-separator);
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    padding: 0 14px;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #f7f7f7
+}
+
+.sales-funnel-manual__item-main {
+    flex: 1;
+    display: flex
+}
+
+.sales-funnel-manual__item-main .icon {
+    margin-top: 4px
+}
+
+.sales-funnel-manual__item-main .icon+.sales-funnel-manual__item-dscr {
+    margin-left: 24px
+}
+
+[dir=rtl] .sales-funnel-manual__item-main .icon+.sales-funnel-manual__item-dscr {
+    margin-right: 24px;
+    margin-left: unset
+}
+
+.sales-funnel-manual__item-secondary {
+    width: 100%;
+    padding-left: 40px;
+    margin-top: 16px
+}
+
+[dir=rtl] .sales-funnel-manual__item-secondary {
+    padding-right: 40px;
+    padding-left: unset
+}
+
+.sales-funnel-manual__item-footer {
+    margin-top: 16px
+}
+
+.sales-funnel-manual__item-footer .btn+.btn {
+    margin-top: 8px
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-manual {
+        padding: 40px 24px
+    }
+
+    .sales-funnel-manual__item {
+        display: flex
+    }
+
+    .sales-funnel-manual__item-secondary {
+        width: 140px;
+        padding-left: 16px;
+        text-align: right;
+        margin-top: 0
+    }
+
+    [dir=rtl] .sales-funnel-manual__item-secondary {
+        padding-right: 16px;
+        padding-left: unset;
+        text-align: left
+    }
+
+    .sales-funnel-manual__item-footer {
+        display: flex
+    }
+
+    .sales-funnel-manual__item-footer .btn+.btn {
+        margin-top: 0;
+        margin-left: 16px
+    }
+
+    [dir=rtl] .sales-funnel-manual__item-footer .btn+.btn {
+        margin-right: 16px;
+        margin-left: unset
+    }
+}
+
+.sales-funnel-paragraph {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center
+}
+
+.sales-funnel-paragraph.is-small {
+    font-size: 14px;
+    line-height: 1.29
+}
+
+.sales-funnel-pictogram {
+    margin: 44px 0 24px
+}
+
+.sales-funnel-pictogram img {
+    display: block;
+    margin: 0 auto
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-pictogram {
+        margin: 56px 0 24px
+    }
+
+    .sales-funnel-pictogram:first-child {
+        margin-top: 16px
+    }
+}
+
+.secure-stamp {
+    display: flex;
+    align-items: center;
+    color: #00000040;
+    font-size: 13px;
+    line-height: 1.08
+}
+
+.secure-stamp .icon {
+    font-size: 16px;
+    margin-right: 8px
+}
+
+[dir=rtl] .secure-stamp .icon {
+    margin-left: 8px;
+    margin-right: unset
+}
+
+@media screen and (max-width: 767px) {
+    .secure-stamp .icon {
+        display: none
+    }
+}
+
+.sales-funnel-subtitle {
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 4px
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-subtitle {
+        margin-bottom: 8px
+    }
+}
+
+.sales-funnel-title {
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 28px;
+    line-height: 1.14;
+    text-align: center;
+    margin-bottom: 4px
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-title {
+        margin-bottom: 8px
+    }
+}
+
+.form-transaction-pair {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.form-transaction-pair__icon {
+    align-self: flex-end;
+    font-size: 16px;
+    line-height: 16px;
+    margin: 8px auto -8px
+}
+
+.form-transaction-pair__icon:before {
+    content: "";
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.form-transaction-pair__item {
+    flex: 1;
+    min-width: 0
+}
+
+@media screen and (min-width: 1000px) {
+    .form-transaction-pair {
+        flex-direction: row
+    }
+
+    .form-transaction-pair__icon {
+        margin: 0 8px;
+        line-height: 48px
+    }
+
+    .form-transaction-pair__icon:before {
+        content: ""
+    }
+}
+
+.form-wallet-select {
+    width: 100%;
+    position: relative
+}
+
+.form-wallet-select.is-disabled {
+    pointer-events: none
+}
+
+.form-wallet-select__top {
+    display: flex;
+    justify-content: space-between
+}
+
+.form-wallet-select__label {
+    font-size: 16px;
+    line-height: 1.25
+}
+
+.form-wallet-select__tip {
+    color: #b3b3b3;
+    font-size: 14px;
+    line-height: 1.14
+}
+
+.form-wallet-select.is-disabled .form-wallet-select__label {
+    color: #b3b3b3
+}
+
+.form-wallet-select__top {
+    margin-bottom: 4px
+}
+
+.form-wallet-select__input {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.25;
+    box-shadow: 0 0 0 2px #0000001a;
+    transition: box-shadow .2s linear
+}
+
+.form-wallet-select.is-disabled .form-wallet-select__input {
+    background-color: #f5f5f5;
+    box-shadow: 0 0 0 2px #f5f5f5;
+    color: #b3b3b3
+}
+
+.form-wallet-select__input:after {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    content: "";
+    display: inline-block;
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+[dir=rtl] .form-wallet-select__input:after {
+    left: 14px;
+    right: unset
+}
+
+.form-wallet-select__input:hover {
+    box-shadow: 0 0 0 2px #0003
+}
+
+.form-wallet-select__input.has-focus {
+    outline: none;
+    box-shadow: 0 0 0 1px #a4a7e399
+}
+
+.form-wallet-select__input:disabled {
+    background-color: #f5f5f5;
+    color: #b2b2b2;
+    box-shadow: 0 0 0 1px #f5f5f5
+}
+
+.form-wallet-select__input.is-regular {
+    font-family: Graphik-Regular, Arial, sans-serif
+}
+
+.form-wallet-select.has-error .form-wallet-select__input {
+    box-shadow: 0 0 0 2px #e73c40
+}
+
+.form-wallet-select.has-error .form-wallet-select__input:hover {
+    box-shadow: 0 0 0 2px #e73c4040
+}
+
+.form-wallet-select__error {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #e73c40
+}
+
+.form-wallet-select__postfix {
+    display: flex;
+    justify-content: space-between;
+    color: #b3b3b3;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px
+}
+
+.form-wallet-select__postfix-amount {
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif
+}
+
+@media screen and (max-width: 999px) {
+    .form-wallet-select.has-tip {
+        padding-bottom: 28px
+    }
+
+    .form-wallet-select.has-tip .form-wallet-select__tip {
+        position: absolute;
+        bottom: 2px
+    }
+
+    .form-wallet-select__postfix-amount {
+        display: none
+    }
+}
+
+.form-wallet-select-item {
+    display: block;
+    width: 100%
+}
+
+.form-wallet-select-item__title {
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.form-wallet-select-item__amount {
+    font-size: 12px;
+    line-height: 16px;
+    color: #000;
+    margin-top: 4px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.form-wallet-select-item__hash {
+    font-family: Graphik-Regular, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.33;
+    margin-top: 8px;
+    color: #bfbfbf;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+@media screen and (min-width: 1000px) {
+    .form-wallet-select-item__primary {
+        display: flex;
+        justify-content: space-between
+    }
+
+    [dir=rtl] .form-wallet-select-item__primary {
+        flex-direction: row-reverse
+    }
+
+    .form-wallet-select-item__amount {
+        margin-top: 0
+    }
+
+    .form-wallet-select-item__hash {
+        margin-top: 2px
+    }
+}
+
+[dir=rtl] .form-wallet-select__input .vs__selected-options {
+    flex-direction: row-reverse
+}
+
+.form-wallet-select__input .vs__selected-options {
+    cursor: pointer
+}
+
+.form-wallet-select__input .vs__search {
+    height: 48px;
+    -moz-appearance: none;
+    border: none
+}
+
+.form-wallet-select__input .vs__selected {
+    padding: 0 16px;
+    line-height: 48px
+}
+
+.form-wallet-select__input .vs__dropdown-menu {
+    background-color: #fff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 0 3px 6px #00000026;
+    border-radius: 10px;
+    padding: 6px;
+    max-height: 256px
+}
+
+.form-wallet-select__input .vs__dropdown-menu::-webkit-scrollbar {
+    display: none
+}
+
+.form-wallet-select__input .vs__dropdown-option {
+    padding: 8px;
+    border-radius: 4px
+}
+
+.form-wallet-select__input .vs__dropdown-option:hover {
+    background-color: #f5f5f5
+}
+
+.form-wallet-select__input .vs__dropdown-option--selected {
+    color: #b3b3b3
+}
+
+.sales-funnel-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 24px 16px
+}
+
+.sales-funnel-wrapper__container {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 672px;
+    max-width: 100%;
+    margin: 0 auto
+}
+
+.sales-funnel-wrapper__header {
+    border-radius: 10px 10px 0 0
+}
+
+.sales-funnel-wrapper.has-warning .sales-funnel-wrapper__header,
+.sales-funnel-wrapper.has-warning .sales-funnel-wrapper__status {
+    background-color: #e73c401a
+}
+
+.sales-funnel-wrapper.has-success .sales-funnel-wrapper__header,
+.sales-funnel-wrapper.has-success .sales-funnel-wrapper__status {
+    background-color: #47a1361a
+}
+
+.sales-funnel-wrapper.has-notice .sales-funnel-wrapper__header,
+.sales-funnel-wrapper.has-notice .sales-funnel-wrapper__status {
+    background-color: #f5f5f5
+}
+
+.sales-funnel-wrapper__status {
+    padding: 0 16px 10px;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.29;
+    text-align: center
+}
+
+.sales-funnel-wrapper.has-warning .sales-funnel-wrapper__status {
+    color: #e73c40
+}
+
+.sales-funnel-wrapper.has-success .sales-funnel-wrapper__status {
+    color: #47a136
+}
+
+.sales-funnel-wrapper__body {
+    width: 448px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 24px 16px
+}
+
+.sales-funnel-wrapper.has-bottom-space .sales-funnel-wrapper__body {
+    padding-bottom: 40px
+}
+
+.sales-funnel-wrapper__footer {
+    background-color: #f5f5f5;
+    border-radius: 0 0 10px 10px
+}
+
+.sales-funnel-wrapper__postfix {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.14
+}
+
+.sales-funnel-wrapper__infobox {
+    width: 672px;
+    max-width: 100%;
+    background-color: #0003;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.29;
+    color: #fff
+}
+
+.sales-funnel-wrapper__infobox:before {
+    content: "";
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    left: 16px;
+    top: 17px;
+    font-size: 16px
+}
+
+[dir=rtl] .sales-funnel-wrapper__infobox:before {
+    right: 16px;
+    left: unset
+}
+
+@media screen and (max-width: 999px) {
+    .sales-funnel-wrapper__infobox {
+        position: relative;
+        margin: 16px auto 0;
+        padding: 16px 16px 16px 44px
+    }
+
+    [dir=rtl] .sales-funnel-wrapper__infobox {
+        padding: 16px 44px 16px 16px
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-wrapper {
+        width: calc(60vw + 22rem);
+        margin: 0 auto;
+        padding: 64px 0 80px
+    }
+
+    .sales-funnel-wrapper__header {
+        border-bottom: 1px solid rgba(0, 0, 0, .06)
+    }
+
+    .sales-funnel-wrapper__status {
+        padding: 10px 16px;
+        font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.29;
+        text-align: center
+    }
+
+    .sales-funnel-wrapper__body {
+        max-width: 416px;
+        margin: 0 auto;
+        padding: 36px 0 24px
+    }
+
+    .sales-funnel-wrapper.has-bottom-space .sales-funnel-wrapper__body {
+        padding-bottom: 64px
+    }
+
+    .sales-funnel-wrapper__body-wide {
+        padding: 36px 0 24px
+    }
+
+    .sales-funnel-wrapper__postfix {
+        margin-top: 24px
+    }
+
+    .sales-funnel-wrapper__infobox {
+        position: absolute;
+        right: 0;
+        top: 64px;
+        width: calc(10vw + 2rem);
+        max-width: 160px;
+        padding: 48px 16px 32px
+    }
+
+    [dir=rtl] .sales-funnel-wrapper__infobox {
+        left: 0;
+        right: unset
+    }
+}
+
+@media screen and (min-width: 1360px) {
+    .sales-funnel-wrapper {
+        width: 73rem
+    }
+
+    .sales-funnel-wrapper__infobox {
+        right: 0
+    }
+}
+
+.loading {
+    position: relative
+}
+
+.loading:before {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 50%;
+    z-index: 3;
+    width: 500%;
+    margin-left: -250%;
+    animation: phAnimation 2s linear infinite;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, .8) 50%, rgba(255, 255, 255, 0) 54%) 50% 50%
+}
+
+[dir=rtl] .loading:before {
+    margin-left: unset;
+    margin-right: -250%;
+    animation: rtlPhAnimation 2s linear infinite
+}
+
+.loading--beige:before {
+    background: linear-gradient(to right, rgba(243, 241, 232, 0) 46%, rgba(243, 241, 232, .8) 50%, rgba(243, 241, 232, 0) 54%) 50% 50%
+}
+
+.loading--violet:before {
+    background: linear-gradient(to right, rgba(164, 167, 227, 0) 46%, rgba(164, 167, 227, .8) 50%, rgba(164, 167, 227, 0) 54%) 50% 50%
+}
+
+.loading--black:before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 46%, rgba(0, 0, 0, .8) 50%, rgba(0, 0, 0, 0) 54%) 50% 50%
+}
+
+.loading__item {
+    position: relative
+}
+
+.loading__item:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #f5f5f5;
+    z-index: 1
+}
+
+.loading--beige .loading__item:after {
+    background-color: #e9e6d9
+}
+
+.loading--violet .loading__item:after {
+    background-color: #9a9ddb
+}
+
+.loading--black .loading__item:after {
+    background-color: #333
+}
+
+.loading--grey .loading__item:after {
+    background-color: #e5e5e5
+}
+
+.loading__item--rounded:after {
+    border-radius: 6px
+}
+
+.loading__item--round:after {
+    border-radius: 50%
+}
+
+.loading__item--bordered:after {
+    inset: -2px
+}
+
+@keyframes phAnimation {
+    0% {
+        transform: translate3d(-30%, 0, 0)
+    }
+
+    to {
+        transform: translate3d(30%, 0, 0)
+    }
+}
+
+@keyframes rtlPhAnimation {
+    0% {
+        transform: translate3d(30%, 0, 0)
+    }
+
+    to {
+        transform: translate3d(-30%, 0, 0)
+    }
+}
+
+.tabs__head {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+    margin-bottom: 4px
+}
+
+.tabs__head-scroll {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -16px
+}
+
+.tabs__head-inner {
+    display: block;
+    text-align: center;
+    margin: auto;
+    padding: 0 16px
+}
+
+.tabs.tabs--wide .tabs__head-scroll {
+    width: 100%
+}
+
+.tabs.tabs--wide .tabs__head-inner {
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap
+}
+
+.tabs.tabs--wide .tabs__toggle {
+    margin-left: 0;
+    flex: 1;
+    justify-content: center
+}
+
+@media screen and (min-width: 1000px) {
+    .tabs__head {
+        margin-bottom: 16px
+    }
+}
+
+.tabs__toggle {
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 32px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: background-color .2s linear
+}
+
+.tabs__toggle--wide {
+    border-radius: 0;
+    line-height: 40px
+}
+
+.tabs__toggle--wide:first-child {
+    border-radius: 4px 0 0
+}
+
+.tabs__toggle--wide:last-child {
+    border-radius: 0 4px 0 0
+}
+
+.tabs__toggle+.tabs__toggle {
+    margin-left: 10px
+}
+
+[dir=rtl] .tabs__toggle+.tabs__toggle {
+    margin-right: 10px;
+    margin-left: unset
+}
+
+.tabs__toggle.is-disabled {
+    color: #b3b3b3;
+    cursor: auto
+}
+
+.tabs__toggle.is-selected {
+    background-color: #f3f1e8
+}
+
+.tabs__toggle .icon {
+    margin-right: 8px
+}
+
+[dir=rtl] .tabs__toggle .icon {
+    margin-left: 8px;
+    margin-right: unset
+}

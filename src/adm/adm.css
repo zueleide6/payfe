@@ -1,0 +1,85 @@
+body{
+  background-color: rgb(248, 248, 248);
+  -webkit-font-smoothing: antialiased;
+}
+
+.LoadNaquelas{
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.table1 {
+  width: 80%;
+  margin-top: 5rem;
+  color: #212529;
+  min-width: 800px !important;
+  -webkit-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+  box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+  padding: 20px 30px;
+  row-gap: 5px;
+}
+
+.thM {
+  padding: 0.75rem;
+  border-top: 1px solid #dee2e6;
+  
+  font-size: 20px;
+  vertical-align: middle;
+  gap: 10px;
+}
+
+.tdM2 {
+  padding-left: 15px;
+  margin: 10px;
+  border-top: 1px solid #dee2e6;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: aqua;
+  vertical-align: middle;
+}
+
+.prices-table .button-cell {
+  width: 20%;
+  display: flex;
+  gap: 4px !important;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.teste {
+  margin: 5px;
+}
+
+.ferramentas{
+  padding-left: 15px;
+  background-color: #d6d6d6;
+
+}
+.tituloTab {
+  border: none;
+  padding: 20px 30px;
+  font-size: 24px;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.status-bullet {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+justify-content: end;}
+
+.status-online {
+  background-color: green;
+}
+
+.status-offline {
+  background-color: red;
+}

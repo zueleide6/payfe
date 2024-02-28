@@ -1,0 +1,429 @@
+.icon {
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon--share {
+    font-size: 20px
+}
+
+.icon-user:before {
+    content: ""
+}
+
+.icon-arrow-dd:before {
+    content: ""
+}
+
+.icon-alert:before {
+    content: "";
+    color: #e73c40
+}
+
+.icon-verifyed:before {
+    content: "";
+    color: #47a136
+}
+
+.icon-check-double:before {
+    content: ""
+}
+
+.icon-limits:before {
+    content: ""
+}
+
+.icon-gift:before {
+    content: ""
+}
+
+.icon-notifications:before {
+    content: ""
+}
+
+.icon-off:before {
+    content: ""
+}
+
+.icon-referal:before {
+    content: ""
+}
+
+.icon-buy:before {
+    content: ""
+}
+
+.icon-arrow-bottom:before {
+    content: ""
+}
+
+.icon-arrow-left:before {
+    content: ""
+}
+
+.icon-arrow-right:before {
+    content: ""
+}
+
+.icon-arrow-top:before {
+    content: ""
+}
+
+.icon-webcamera:before {
+    content: ""
+}
+
+.icon-file:before {
+    content: ""
+}
+
+.icon-close:before {
+    content: ""
+}
+
+.icon-checkbox:before {
+    content: ""
+}
+
+.icon-question-circle:before {
+    content: ""
+}
+
+.icon-arrow-long-left:before {
+    content: ""
+}
+
+.icon-arrow-long-right:before {
+    content: ""
+}
+
+.icon-arrow-long-up:before {
+    content: ""
+}
+
+.icon-arrow-long-down:before {
+    content: ""
+}
+
+.icon-wallet:before {
+    content: ""
+}
+
+.icon-paybis-logo:before {
+    content: ""
+}
+
+.icon-plus:before {
+    content: ""
+}
+
+.icon-shield:before {
+    content: ""
+}
+
+.icon-dots:before {
+    content: ""
+}
+
+.icon-trash:before {
+    content: ""
+}
+
+.icon-edit:before {
+    content: ""
+}
+
+.icon-approximately:before {
+    content: ""
+}
+
+.icon-info-circle:before {
+    content: ""
+}
+
+.icon-twitter:before {
+    content: ""
+}
+
+.icon-fb-messenger:before {
+    content: ""
+}
+
+.icon-facebook:before {
+    content: ""
+}
+
+.icon-envelope:before {
+    content: ""
+}
+
+.icon-copy:before {
+    content: ""
+}
+
+.icon-arrow-triangle-top:before {
+    content: ""
+}
+
+.icon-arrow-triangle-right:before {
+    content: ""
+}
+
+.icon-arrow-triangle-left:before {
+    content: ""
+}
+
+.icon-phone:before {
+    content: ""
+}
+
+.icon-desktop:before {
+    content: ""
+}
+
+.icon-clock:before {
+    content: ""
+}
+
+.icon-lock:before {
+    content: ""
+}
+
+.icon-search:before {
+    content: ""
+}
+
+.icon-exchange:before {
+    content: ""
+}
+
+.icon-card:before {
+    content: ""
+}
+
+.icon-earth:before {
+    content: ""
+}
+
+.icon-burger:before {
+    content: ""
+}
+
+.icon-close-lg:before {
+    content: ""
+}
+
+.icon-dots-h:before {
+    content: ""
+}
+
+.icon-doublearrow:before {
+    content: ""
+}
+
+.icon-doublearrow-v:before {
+    content: ""
+}
+
+.icon-vk:before {
+    content: ""
+}
+
+.icon-google:before {
+    content: ""
+}
+
+.icon-podcast:before {
+    content: ""
+}
+
+.icon-facebook-f:before {
+    content: ""
+}
+
+.icon-instagram:before {
+    content: ""
+}
+
+.icon-reddit:before {
+    content: ""
+}
+
+.icon-youtube:before {
+    content: ""
+}
+
+.icon-volume:before {
+    content: ""
+}
+
+.icon-book:before {
+    content: ""
+}
+
+.icon-filter:before {
+    content: ""
+}
+
+.icon-print:before {
+    content: ""
+}
+
+.icon-linkedin:before {
+    content: ""
+}
+
+.icon-chat:before {
+    content: ""
+}
+
+.icon-minus:before {
+    content: ""
+}
+
+.icon-portal:before {
+    content: ""
+}
+
+.icon-skype:before {
+    content: ""
+}
+
+.icon-maximize:before {
+    content: ""
+}
+
+.icon-minimize:before {
+    content: ""
+}
+
+.icon-users:before {
+    content: ""
+}
+
+.icon-support:before {
+    content: ""
+}
+
+.icon-shield-alt:before {
+    content: ""
+}
+
+.icon-mailbox:before {
+    content: ""
+}
+
+.icon-career:before {
+    content: ""
+}
+
+.icon-bullhorn:before {
+    content: ""
+}
+
+.icon-bookmark:before {
+    content: ""
+}
+
+.icon-coins:before {
+    content: ""
+}
+
+.icon-calculator:before {
+    content: ""
+}
+
+.icon-union:before {
+    content: ""
+}
+
+.icon-sell:before {
+    content: ""
+}
+
+.icon-qr-code:before {
+    content: ""
+}
+
+.icon-plane:before {
+    content: ""
+}
+
+.icon-telegram-plane:before {
+    content: ""
+}
+
+.icon-share:before {
+    content: ""
+}
+
+.icon-coinpayments:before {
+    content: ""
+}
+
+.icon-binance:before {
+    content: ""
+}
+
+.icon-circle:before {
+    content: ""
+}
+
+.icon-squares:before {
+    content: ""
+}
+
+.icon-repeat:before {
+    content: ""
+}
+
+.icon-cancelled:before {
+    content: ""
+}
+
+.icon-bank-build:before {
+    content: ""
+}
+
+.icon-star:before {
+    content: ""
+}
+
+.icon-beaxy:before {
+    content: ""
+}
+
+.icon-oobit:before {
+    content: ""
+}
+
+.icon-thorwallet:before {
+    content: ""
+}
+
+.icon-firstbyt:before {
+    content: ""
+}
+
+.icon-heart-half:before {
+    content: ""
+}
+
+.icon-arrow-left-slider:before {
+    content: ""
+}
+
+.icon-arrow-right-slider:before {
+    content: ""
+}
+
+.icon-briefcase:before {
+    content: ""
+}

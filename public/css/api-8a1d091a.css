@@ -1,0 +1,219 @@
+.sales-funnel-paragraph[data-v-4d3370e5] {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center
+}
+
+.sales-funnel-paragraph.is-small[data-v-4d3370e5] {
+    font-size: 14px;
+    line-height: 1.29
+}
+
+.sales-funnel-paragraph.is-bold[data-v-4d3370e5] {
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif
+}
+
+.sales-funnel-subtitle[data-v-05232c62] {
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 4px
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-subtitle[data-v-05232c62] {
+        margin-bottom: 8px
+    }
+}
+
+.sales-funnel-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 24px 16px
+}
+
+.sales-funnel-wrapper.is-widget {
+    max-width: 100%
+}
+
+.sales-funnel-wrapper__container {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 672px;
+    max-width: 100%;
+    margin: 0 auto
+}
+
+.sales-funnel-wrapper__header {
+    border-radius: 10px 10px 0 0
+}
+
+.sales-funnel-wrapper.has-warning .sales-funnel-wrapper__header,
+.sales-funnel-wrapper.has-warning .sales-funnel-wrapper__status {
+    background-color: #e73c401a
+}
+
+.sales-funnel-wrapper.has-success .sales-funnel-wrapper__header,
+.sales-funnel-wrapper.has-success .sales-funnel-wrapper__status {
+    background-color: #47a1361a
+}
+
+.sales-funnel-wrapper.has-notice .sales-funnel-wrapper__header,
+.sales-funnel-wrapper.has-notice .sales-funnel-wrapper__status {
+    background-color: #f5f5f5
+}
+
+.sales-funnel-wrapper__status {
+    padding: 0 16px 10px;
+    font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.29;
+    text-align: center
+}
+
+.sales-funnel-wrapper.has-warning .sales-funnel-wrapper__status {
+    color: #e73c40
+}
+
+.sales-funnel-wrapper.has-success .sales-funnel-wrapper__status {
+    color: #47a136
+}
+
+.sales-funnel-wrapper__body {
+    width: 448px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 24px 16px
+}
+
+.sales-funnel-wrapper__body .app__inner,
+.sales-funnel-wrapper__body .app__body {
+    padding: 0
+}
+
+.sales-funnel-wrapper.has-bottom-space .sales-funnel-wrapper__body {
+    padding-bottom: 40px
+}
+
+.sales-funnel-wrapper__footer {
+    background-color: #f5f5f5;
+    border-radius: 0 0 10px 10px
+}
+
+.sales-funnel-wrapper__postfix {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.14
+}
+
+.sales-funnel-wrapper__postfix-compliance {
+    padding-bottom: 8px
+}
+
+.sales-funnel-wrapper__infobox {
+    width: 672px;
+    max-width: 100%;
+    background-color: #0003;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.29;
+    color: #fff
+}
+
+.sales-funnel-wrapper__infobox:before {
+    content: "";
+    font-family: icomoon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    left: 16px;
+    top: 17px;
+    font-size: 16px
+}
+
+[dir=rtl] .sales-funnel-wrapper__infobox:before {
+    right: 16px;
+    left: unset
+}
+
+@media screen and (max-width: 999px) {
+    .sales-funnel-wrapper__infobox {
+        position: relative;
+        margin: 16px auto 0;
+        padding: 16px 16px 16px 44px
+    }
+
+    [dir=rtl] .sales-funnel-wrapper__infobox {
+        padding: 16px 44px 16px 16px
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .sales-funnel-wrapper {
+        width: calc(60vw + 22rem);
+        margin: 0 auto;
+        padding: 64px 0 80px
+    }
+
+    .sales-funnel-wrapper__header {
+        border-bottom: 1px solid rgba(0, 0, 0, .06)
+    }
+
+    .sales-funnel-wrapper__status {
+        padding: 10px 16px;
+        font-family: Graphik-Semibold, Arial Bold, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.29;
+        text-align: center
+    }
+
+    .sales-funnel-wrapper__body {
+        max-width: 416px;
+        margin: 0 auto;
+        padding: 36px 0 24px
+    }
+
+    .sales-funnel-wrapper.has-bottom-space .sales-funnel-wrapper__body {
+        padding-bottom: 64px
+    }
+
+    .sales-funnel-wrapper__body-wide {
+        padding: 36px 0 24px
+    }
+
+    .sales-funnel-wrapper__postfix {
+        margin-top: 24px
+    }
+
+    .sales-funnel-wrapper__infobox {
+        position: absolute;
+        right: 0;
+        top: 64px;
+        width: calc(10vw + 2rem);
+        max-width: 160px;
+        padding: 48px 16px 32px
+    }
+
+    [dir=rtl] .sales-funnel-wrapper__infobox {
+        left: 0;
+        right: unset
+    }
+}
+
+@media screen and (min-width: 1360px) {
+    .sales-funnel-wrapper {
+        width: 73rem
+    }
+
+    .sales-funnel-wrapper__infobox {
+        right: 0
+    }
+}
