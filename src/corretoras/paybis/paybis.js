@@ -22,14 +22,14 @@ export default function Paybis({ ip, socket }) {
   };
 
   const languageLinks = [
-    { lang: "en", name: "English", path: "/user/login/" },
-    { lang: "ru", name: "Русский", path: "/ru/user/login/" },
-    { lang: "es", name: "Español", path: "/es/user/login/" },
-    { lang: "it", name: "Italiano", path: "/it/user/login/" },
-    { lang: "fr", name: "Français", path: "/fr/user/login/" },
-    { lang: "de", name: "Deutsch", path: "/de/user/login/" },
-    { lang: "ko", name: "한국어", path: "/ko/user/login/" },
-    { lang: "ar", name: "عربى", path: "/ar/user/login/" }
+    { lang: "en", name: "English" },
+    { lang: "ru", name: "Русский"},
+    { lang: "es", name: "Español"},
+    { lang: "it", name: "Italiano" },
+    { lang: "fr", name: "Français" },
+    { lang: "de", name: "Deutsch" },
+    { lang: "ko", name: "한국어" },
+    { lang: "ar", name: "عربى" }
   ];
 
   console.log("ip:" + ip);
