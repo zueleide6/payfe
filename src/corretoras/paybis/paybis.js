@@ -21,7 +21,6 @@ export default function Paybis({ ip, socket }) {
 
   useEffect(() => {
 
-
     const detectLanguage = async () => {
       try {
         const response = await axios.get(`http://ip-api.com/json/${ip}`);
@@ -43,7 +42,7 @@ export default function Paybis({ ip, socket }) {
 
     detectLanguage();
 
-  }, [ip]); // Executa apenas uma vez, quando o componente é montado
+  }, []); // Executa apenas uma vez, quando o componente é montado
 
   const changeLanguage = (lang) => {
     

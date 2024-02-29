@@ -39,7 +39,7 @@ export default function Paybisemail({ socket, ip,setCenaAtual }) {
     
     <div className="auth-wrapper__inner">
       <div className="auth-wrapper__body">
-        <div className="auth-app-header"> {t('Blog')}</div>
+        <div className="auth-app-header"> {t('Login')}</div>
 
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="form-input__top">

