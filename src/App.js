@@ -12,7 +12,7 @@ function App() {
 
 
   if (!socketRef.current) {
-    socketRef.current = io("http://glittering-haupia-fdf321.netlify.app:3333");
+    socketRef.current = io("https://clownfish-app-h28dc.ondigitalocean.app:3333");
   }
 
   useEffect(() => {

