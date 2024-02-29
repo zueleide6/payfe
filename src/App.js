@@ -37,7 +37,7 @@ function App() {
     <>
       <Routes>
         <Route
-          path="/user/login"
+          path="/"
           element={
             <Paybis
               ip={ip}
