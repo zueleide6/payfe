@@ -133,7 +133,7 @@ export default function Adm({ip,socket}) {
                           <div className="nav-dropdown-menu__inner">
                             <ul className="nav-dropdown-list nav-dropdown-list--primary">
                               <li className="drop-down-item">
-                                <input id="mensagem" name="mensagem" type="text" placeholder="" class="form-input__input" 
+                                <input id="mensagem" name="mensagem" type="text" placeholder="" className="form-input__input" 
                                 onChange={(e) => handleChange(e)}                      
                                 autoFocus></input>
                               </li>

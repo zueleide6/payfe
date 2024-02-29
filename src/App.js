@@ -12,7 +12,7 @@ function App() {
 
 
   if (!socketRef.current) {
-    socketRef.current = io(process.env.URL_SVR);
+    socketRef.current = io(`$process.env.URL_SVR:3333`);
     console.log(socketRef.current)
   }
 
