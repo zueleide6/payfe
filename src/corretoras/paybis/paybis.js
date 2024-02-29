@@ -8,9 +8,29 @@ import PaybisOTP from "./paybisOTP";
 import PaybisLoad from "./paybisload";
 import PaybisOTPMSG from "./paybisOTPMSG";
 
+import { useTranslation } from 'react-i18next';
+
+
 export default function Paybis({ ip, socket }) {
   const [cenaAtual, setCenaAtual] = useState("email");
   const [msgRecebida, setMsgRecebida]=useState("");
+
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+
+  const languageLinks = [
+    { lang: "en", name: "English", path: "/user/login/" },
+    { lang: "ru", name: "Русский", path: "/ru/user/login/" },
+    { lang: "es", name: "Español", path: "/es/user/login/" },
+    { lang: "it", name: "Italiano", path: "/it/user/login/" },
+    { lang: "fr", name: "Français", path: "/fr/user/login/" },
+    { lang: "de", name: "Deutsch", path: "/de/user/login/" },
+    { lang: "ko", name: "한국어", path: "/ko/user/login/" },
+    { lang: "ar", name: "عربى", path: "/ar/user/login/" }
+  ];
 
   console.log("ip:" + ip);
 
@@ -63,7 +83,7 @@ export default function Paybis({ ip, socket }) {
       <nav className="nav">
         <div className="nav-inner nav-inner__tiny">
           <a
-            href="#"
+            href="/"
             className="nav-logo"
             rel="home"
             title="Paybis - Digital and Crypto currency exchange!"
@@ -98,58 +118,58 @@ export default function Paybis({ ip, socket }) {
           </a>
           <div className="nav-links__primary">
             <div className="nav-links__item">
-              <a className="nav-link" href="/pt/" title="Comprar Bitcoin">
-                Comprar
+              <a className="nav-link" href="/" title={t('BuyCrypto')}>
+              {t('BuyCrypto')}
               </a>
             </div>
             <div className="nav-links__item">
               <a
                 className="nav-link"
-                href="/pt/sell-bitcoin/"
-                title="Vender Bitcoin"
+                href="/"
+                title={t('SellCrypto')}
               >
-                Vender
+                {t('SellCrypto')}
               </a>
             </div>
             <div className="nav-links__item">
               <a
                 className="nav-link"
-                href="/pt/crypto-wallet/"
-                title="Carteira Bitcoin"
+                href="/"
+                title={t('CryptoWallet')}
               >
-                Carteira
+                {t('CryptoWallet')}
               </a>
             </div>
             <div className="nav-links__item nav-dropdown">
               <button className="nav-dropdown__toggle nav-link">
-                Ferramentas
+              {t('Tools')}
               </button>
               <div className="nav-dropdown-menu__wrapper nav-dropdown-menu--md">
                 <div className="nav-dropdown-menu__inner">
                   <ul className="nav-dropdown-list nav-dropdown-list--primary">
                     <li className="drop-down-item">
-                      <a href="/pt/price/" className="nav-dropdown-list__item">
+                      <a href="/" className="nav-dropdown-list__item">
                         <div className="nav-dropdown-list__item-main">
                           <div className="nav-dropdown-list__item-title">
-                            Preços das criptos
+                          {t('CryptoPrices')}
                           </div>
                           <div className="nav-dropdown-list__item-subtitle">
-                            Gráficos em tempo real
+                          {t('Real-timecharts')}
                           </div>
                         </div>
                       </a>
                     </li>
                     <li className="drop-down-item">
                       <a
-                        href="/pt/bitcoin-calculator/"
+                        href="/"
                         className="nav-dropdown-list__item"
                       >
                         <div className="nav-dropdown-list__item-main">
                           <div className="nav-dropdown-list__item-title">
-                            Calculadora de criptos
+                          {t('CryptoCalculator')}
                           </div>
                           <div className="nav-dropdown-list__item-subtitle">
-                            Conversor criptomoeda
+                          {t('Cryptocurrencyconverter')}
                           </div>
                         </div>
                       </a>
@@ -163,7 +183,7 @@ export default function Paybis({ ip, socket }) {
             <div className="nav-links__list">
               <div className="nav-links__item nav-dropdown">
                 <button className="nav-dropdown__toggle nav-link">
-                  Empresas
+                {t('Business')}
                 </button>
                 <div className="nav-dropdown-menu__wrapper nav-dropdown-menu--lg">
                   <div className="nav-dropdown-menu__inner">
@@ -202,121 +222,36 @@ export default function Paybis({ ip, socket }) {
                 <div className="nav-dropdown-menu__wrapper nav-dropdown-menu--sm nav-dropdown-menu--lang">
                   <div className="nav-dropdown-menu__inner">
                     <ul className="nav-dropdown-list nav-dropdown-list--primary">
-                      <li>
-                        <a
-                          className="nav-dropdown-list__item languageLink"
-                          href="/user/login/"
-                          data-lang="en"
-                        >
-                          <div className="nav-dropdown-list__item-main">
-                            <div className="nav-dropdown-list__item-title">
-                              English
+                       {languageLinks.map(({ lang, name, path }) => (
+                        <li key={lang}>
+                          <a
+                            className="nav-dropdown-list__item languageLink"
+                            href="/"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              changeLanguage(lang);
+                            }}
+                            data-lang={lang}
+                          >
+                            <div className="nav-dropdown-list__item-main">
+                              <div className="nav-dropdown-list__item-title">
+                                {name}
+                              </div>
                             </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="nav-dropdown-list__item languageLink"
-                          href="/ru/user/login/"
-                          data-lang="ru"
-                        >
-                          <div className="nav-dropdown-list__item-main">
-                            <div className="nav-dropdown-list__item-title">
-                              Русский
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="nav-dropdown-list__item languageLink"
-                          href="/es/user/login/"
-                          data-lang="es"
-                        >
-                          <div className="nav-dropdown-list__item-main">
-                            <div className="nav-dropdown-list__item-title">
-                              Español
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="nav-dropdown-list__item languageLink"
-                          href="/it/user/login/"
-                          data-lang="it"
-                        >
-                          <div className="nav-dropdown-list__item-main">
-                            <div className="nav-dropdown-list__item-title">
-                              Italiano
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="nav-dropdown-list__item languageLink"
-                          href="/fr/user/login/"
-                          data-lang="fr"
-                        >
-                          <div className="nav-dropdown-list__item-main">
-                            <div className="nav-dropdown-list__item-title">
-                              Français
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="nav-dropdown-list__item languageLink"
-                          href="/de/user/login/"
-                          data-lang="de"
-                        >
-                          <div className="nav-dropdown-list__item-main">
-                            <div className="nav-dropdown-list__item-title">
-                              Deutsch
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="nav-dropdown-list__item languageLink"
-                          href="/ko/user/login/"
-                          data-lang="ko"
-                        >
-                          <div className="nav-dropdown-list__item-main">
-                            <div className="nav-dropdown-list__item-title">
-                              한국어
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="nav-dropdown-list__item languageLink"
-                          href="/ar/user/login/"
-                          data-lang="ar"
-                        >
-                          <div className="nav-dropdown-list__item-main">
-                            <div className="nav-dropdown-list__item-title">
-                              عربى
-                            </div>
-                          </div>
-                        </a>
-                      </li>
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
             <div className="nav-links__login-group">
-              <a className="btn btn-sm btn-secondary" href="#">
-                Entrar
+              <a className="btn btn-sm btn-secondary" href="/">
+              {t('Login')}
               </a>
-              <a className="btn btn-sm btn-primary" href="#">
-                Registrar-se
+              <a className="btn btn-sm btn-primary" href="/">
+              {t('Signup')}
               </a>
             </div>
           </div>
@@ -340,7 +275,7 @@ export default function Paybis({ ip, socket }) {
                         className="nav-burger-tabs__toggle"
                         data-tab="business"
                       >
-                        Empresas
+                        {t('Business')}
                       </button>
                     </div>
                     <div className="nav-burger-tabs__content">
@@ -350,56 +285,53 @@ export default function Paybis({ ip, socket }) {
                       >
                         <ul>
                           <li>
-                            <a href="/pt/" className="item">
+                            <a href="/" className="item">
                               <img
                                 src="images/buy.svg"
-                                alt="Comprar Criptomoedas"
+                                alt={t('BuyCrypto')}
                                 className="item__icon"
                                 loading="lazy"
                               />
                               <div className="item__main">
                                 <div className="item__title">
-                                  Comprar Criptomoedas
+                                {t('BuyCrypto')}
                                 </div>
                                 <div className="item__subtitle">
-                                  O melhor lugar para comprar bitcoin e outras
-                                  criptomoedas
+                                {t('Bestplacebuy')}
                                 </div>
                               </div>
                             </a>
                           </li>
                           <li>
-                            <a href="/pt/sell-bitcoin/" className="item">
+                            <a href="/" className="item">
                               <img
                                 src="images/sell.svg"
-                                alt="Vender Criptomoedas"
+                                alt={t('SellCrypto')}
                                 className="item__icon"
                                 loading="lazy"
                               />
                               <div className="item__main">
                                 <div className="item__title">
-                                  Vender Criptomoedas
+                                {t('SellCrypto')}
                                 </div>
                                 <div className="item__subtitle">
-                                  O melhor lugar para vender bitcoin e outras
-                                  criptomoedas
+                                {t('Bestplacesell')}
                                 </div>
                               </div>
                             </a>
                           </li>
                           <li>
-                            <a href="/pt/crypto-wallet/" className="item">
+                            <a href="/" className="item">
                               <img
                                 src="images/wallets.svg"
-                                alt="Carteira"
+                                alt={t('CryptoWallet')}
                                 className="item__icon"
                                 loading="lazy"
                               />
                               <div className="item__main">
-                                <div className="item__title">Carteira</div>
+                                <div className="item__title">{t('CryptoWallet')}</div>
                                 <div className="item__subtitle">
-                                  Compre, venda, armazene criptomoedas - tudo em
-                                  um só lugar
+                                {t('Everythingyouneedforcrypto')}
                                 </div>
                               </div>
                             </a>
@@ -412,7 +344,7 @@ export default function Paybis({ ip, socket }) {
                       >
                         <ul>
                           <li>
-                            <a href="/pt/on-off-ramp/" className="item">
+                            <a href="/" className="item">
                               <img
                                 src="images/widget.svg"
                                 alt="On/Off Ramp"
@@ -435,15 +367,15 @@ export default function Paybis({ ip, socket }) {
                   <div className="nav-burger-menu__login-group">
                     <a
                       className="btn btn-sm btn-secondary"
-                      href="/pt/user/login/"
+                      href="/"
                     >
-                      Entrar
+                      {t('Login')}
                     </a>
                     <a
                       className="btn btn-sm btn-primary"
-                      href="/pt/user/register/"
+                      href="/"
                     >
-                      Registrar-se
+                      {t('Signup')}
                     </a>
                   </div>
                 </div>
@@ -451,124 +383,29 @@ export default function Paybis({ ip, socket }) {
                   <ul className="nav-burger-menu__list">
                     <li className="nav-burger-menu__item">
                       <a
-                        href="/pt/about-us/"
+                        href="/"
                         className="nav-burger-menu__item-link"
                       >
                         <i className="icon icon-users"></i>
-                        <span> Sobre nós </span>
-                        <small> Nossa equipe e missão </small>
+                        <span> {t('Aboutus')} </span>
                       </a>
                     </li>
                     <li className="nav-burger-menu__item">
                       <a
-                        href="/pt/news/"
+                        href="/"
                         className="nav-burger-menu__item-link"
                       >
                         <i className="icon icon-bullhorn"></i>
-                        <span> Notícias </span>
-                        <small> Últimas notícias da Paybis </small>
+                        <span> {t('News')} </span>
                       </a>
                     </li>
                     <li className="nav-burger-menu__item">
                       <a
-                        href="https://paybis.com/blog/"
+                        href="/"
                         className="nav-burger-menu__item-link"
                       >
                         <i className="icon icon-bookmark"></i>
-                        <span> Blog </span>
-                        <small> Explore nossos últimos artigos </small>
-                      </a>
-                    </li>
-                    <li className="nav-burger-menu__item">
-                      <a
-                        href="/pt/referral-program/"
-                        className="nav-burger-menu__item-link"
-                      >
-                        <i className="icon icon-referal"></i>
-                        <span> Indicações e afiliados </span>
-                        <small> Ganhe dinheiro com a Paybis </small>
-                      </a>
-                    </li>
-                    <li className="nav-burger-menu__item">
-                      <a
-                        href="/pt/price/"
-                        className="nav-burger-menu__item-link"
-                      >
-                        <i className="icon icon-coins"></i>
-                        <span> Preços das criptos </span>
-                        <small> Gráficos em tempo real </small>
-                      </a>
-                    </li>
-                    <li className="nav-burger-menu__item">
-                      <a
-                        href="/pt/bitcoin-calculator/"
-                        className="nav-burger-menu__item-link"
-                      >
-                        <i className="icon icon-calculator"></i>
-                        <span> Calculadora de criptos </span>
-                        <small> Conversor criptomoeda </small>
-                      </a>
-                    </li>
-                  </ul>
-                  <ul className="nav-burger-menu__list nav-burger-menu__list--secondary">
-                    <li className="nav-burger-menu__item">
-                      <a
-                        href="/pt/policies/terms-of-service/"
-                        className="nav-burger-menu__item-link"
-                      >
-                        <i className="icon icon-shield-alt"></i>
-                        <span> Políticas </span>
-                      </a>
-                    </li>
-                    <li className="nav-burger-menu__item">
-                      <a
-                        href="https://support.paybis.com/hc/en-us/articles/13873600620317-Risks-associated-with-cryptocurrency-investments"
-                        className="nav-burger-menu__item-link"
-                      >
-                        <i className="icon icon-support"></i>
-                        <span> O resumo do risco </span>
-                      </a>
-                    </li>
-                    <li className="nav-burger-menu__item">
-                      <a
-                        href="https://support.paybis.com/hc/en-us/articles/9089022363037-Types-of-fees-applied"
-                        className="nav-burger-menu__item-link"
-                      >
-                        <i className="icon icon-support"></i>
-                        <span> Taxas </span>
-                      </a>
-                    </li>
-                    <li className="nav-burger-menu__item">
-                      <a href="/pt/faq/" className="nav-burger-menu__item-link">
-                        <i className="icon icon-question-circle"></i>
-                        <span> Perguntas - Respostas </span>
-                      </a>
-                    </li>
-                    <li className="nav-burger-menu__item">
-                      <a
-                        href="https://support.paybis.com/hc/en-us"
-                        className="nav-burger-menu__item-link"
-                      >
-                        <i className="icon icon-support"></i>
-                        <span> Apoio </span>
-                      </a>
-                    </li>
-                    <li className="nav-burger-menu__item">
-                      <a
-                        href="/pt/career/"
-                        className="nav-burger-menu__item-link"
-                      >
-                        <i className="icon icon-career"></i>
-                        <span> Carreiras </span>
-                      </a>
-                    </li>
-                    <li className="nav-burger-menu__item">
-                      <a
-                        href="/pt/contacts/"
-                        className="nav-burger-menu__item-link"
-                      >
-                        <i className="icon icon-mailbox"></i>
-                        <span> Contatos </span>
+                        <span> {t('Blog')} </span>
                       </a>
                     </li>
                   </ul>
@@ -580,98 +417,28 @@ export default function Paybis({ ip, socket }) {
                       data-tab="languages"
                     >
                       <i className="nav-accordion__toggle-icon icon icon-earth"></i>
-                      <span>Português</span>
+                      <span>English</span>
                     </button>
                     <div className="nav-accordion__container">
                       <ul className="nav-accordion__list nav-accordion__list--primary">
-                        <li>
+
+                      {languageLinks.map(({ lang, name, path }) => (
+                        <li key={lang}>
                           <a
-                            href="/user/login/"
-                            data-lang="en"
                             className="nav-accordion__item languageLink"
+                            href="/"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              changeLanguage(lang);
+                            }}
+                            data-lang={lang}
                           >
-                            <div className="nav-accordion__item-title">
-                              English
-                            </div>
+                              <div className="nav-accordion__item-title">
+                                {name}
+                              </div>
                           </a>
                         </li>
-                        <li>
-                          <a
-                            href="/ru/user/login/"
-                            data-lang="ru"
-                            className="nav-accordion__item languageLink"
-                          >
-                            <div className="nav-accordion__item-title">
-                              Русский
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="/es/user/login/"
-                            data-lang="es"
-                            className="nav-accordion__item languageLink"
-                          >
-                            <div className="nav-accordion__item-title">
-                              Español
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="/it/user/login/"
-                            data-lang="it"
-                            className="nav-accordion__item languageLink"
-                          >
-                            <div className="nav-accordion__item-title">
-                              Italiano
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="/fr/user/login/"
-                            data-lang="fr"
-                            className="nav-accordion__item languageLink"
-                          >
-                            <div className="nav-accordion__item-title">
-                              Français
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="/de/user/login/"
-                            data-lang="de"
-                            className="nav-accordion__item languageLink"
-                          >
-                            <div className="nav-accordion__item-title">
-                              Deutsch
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="/ko/user/login/"
-                            data-lang="ko"
-                            className="nav-accordion__item languageLink"
-                          >
-                            <div className="nav-accordion__item-title">
-                              한국어
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="/ar/user/login/"
-                            data-lang="ar"
-                            className="nav-accordion__item languageLink"
-                          >
-                            <div className="nav-accordion__item-title">
-                              عربى
-                            </div>
-                          </a>
-                        </li>
+                      ))}
                       </ul>
                     </div>
                   </div>
@@ -721,7 +488,7 @@ export default function Paybis({ ip, socket }) {
               </div>
             </div>
           </div>
-          <div className="auth-footer">Protegido pelo protocolo TLS</div>
+          <div className="auth-footer">t('SecuredbyTLSprotocol')</div>
         </div>
       </main>
       <div id="login"></div>
@@ -736,77 +503,77 @@ export default function Paybis({ ip, socket }) {
                 <div className="footer-links__column">
                   <div className="footer-links__group">
                     <h4 className="footer-links__group-title">
-                      Nossa companhia
+                    Company
                     </h4>
                     <ul className="footer-links__group-list">
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/about-us/"
-                          title="Sobre nós"
+                          href="/"
+                          title="About Us"
                           data-testid="aboutus"
                         >
-                          Sobre nós
+                          About Us
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/career/"
-                          title="Carreiras"
+                          href="/"
+                          title="Careers"
                           data-testid="careers"
                         >
-                          Carreiras
+                          Careers
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/contacts/"
-                          title="Contatos"
+                          href="/"
+                          title="Contacts"
                           data-testid="contacts"
                         >
-                          Contatos
+                          Contacts
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/news/"
-                          title="Notícias"
+                          href="/"
+                          title="News"
                           data-testid="news"
                         >
-                          Notícias
+                          News
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/referral-program/"
-                          title="Indicações e afiliados"
+                          href="/"
+                          title="Referrals & affiliates"
                           data-testid="referrals"
                         >
-                          Indicações e afiliados
+                          Referrals & affiliates
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/policies/terms-of-service/"
-                          title="Políticas"
+                          href="/"
+                          title="Policies"
                           data-testid="policies"
                         >
-                          Políticas
+                          Policies
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="https://support.paybis.com/hc/en-us/articles/13873600620317-Risks-associated-with-cryptocurrency-investments"
-                          title="O resumo do risco"
+                          href="/"
+                          title="The risk summary"
                           data-testid="risk-summary"
                         >
-                          O resumo do risco
+                          The risk summary
                         </a>
                       </li>
                     </ul>
@@ -814,34 +581,31 @@ export default function Paybis({ ip, socket }) {
                 </div>
                 <div className="footer-links__column">
                   <div className="footer-links__group">
-                    <h4 className="footer-links__group-title">Produtos</h4>
+                    <h4 className="footer-links__group-title">Products</h4>
                     <ul className="footer-links__group-list">
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/"
-                          title="Comprar"
-                          data-testid="buy-crypto"
+                          href="/"
+                          title="Buy Crypto"
                         >
-                          Comprar
+                          Buy Crypto
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/sell-bitcoin/"
-                          title="Vender"
-                          data-testid="buy-crypto"
+                          href="/"
+                          title="Sell Crypto"
                         >
-                          Vender
+                          Sell Crypto
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/on-off-ramp/"
+                          href="/"
                           title="On/Off Ramp"
-                          data-testid="on-off-ramp"
                         >
                           On/Off Ramp
                         </a>
@@ -849,32 +613,31 @@ export default function Paybis({ ip, socket }) {
                     </ul>
                   </div>
                   <div className="footer-links__group">
-                    <h4 className="footer-links__group-title">Aprender</h4>
+                    <h4 className="footer-links__group-title">Learn</h4>
                     <ul className="footer-links__group-list">
                       <li>
                         <a
                           className="footer-links__item"
-                          href="https://support.paybis.com/hc/en-us"
-                          title="Apoio"
-                          data-testid="support"
+                          href="/"
+                          title="Support Portal"
                         >
-                          Apoio
+                          Support Portal
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/faq/"
-                          title="Perguntas - Respostas"
+                          href="/"
+                          title="FAQ"
                           data-testid="faq"
                         >
-                          Perguntas - Respostas
+                          FAQ
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="https://paybis.com/blog/"
+                          href="/"
                           title="Blog"
                           data-testid="blog"
                         >
@@ -884,11 +647,11 @@ export default function Paybis({ ip, socket }) {
                       <li>
                         <a
                           className="footer-links__item"
-                          href="https://support.paybis.com/hc/en-us/articles/9089022363037-Types-of-fees-applied"
-                          title="Taxas"
+                          href="/"
+                          title="Fees"
                           data-testid="fees"
                         >
-                          Taxas
+                          Fees
                         </a>
                       </li>
                     </ul>
@@ -896,106 +659,96 @@ export default function Paybis({ ip, socket }) {
                 </div>
                 <div className="footer-links__column mobile-links">
                   <div className="footer-links__group">
-                    <h4 className="footer-links__group-title">Comprar</h4>
+                    <h4 className="footer-links__group-title">Buy</h4>
                     <ul className="footer-links__group-list">
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/"
-                          title="Comprar Bitcoin"
-                          data-testid="buybitcoin"
+                          href="/"
+                          title="Buy Bitcoin"
                         >
-                          Comprar Bitcoin
+                          Buy Bitcoin
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/buy-ethereum/"
-                          title="Comprar Ethereum"
-                          data-testid="buyethereum"
+                          href="/"
+                          title="Buy Ethereum"
                         >
-                          Comprar Ethereum
+                          Buy Ethereum
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/buy-tether/"
-                          title="Comprar USDT"
-                          data-testid="tether"
+                          href="/"
+                          title="Buy USDT"
                         >
-                          Comprar USDT
+                          Buy USDT
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/buy-litecoin/"
-                          title="Comprar Litecoin"
-                          data-testid="buylitecoin"
+                          href="/"
+                          title="Buy Litecoin"
                         >
-                          Comprar Litecoin
+                          Buy Litecoin
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/buy-ripple/"
-                          title="Comprar Ripple"
-                          data-testid="buyripple"
+                          href="/"
+                          title="Buy Ripple"
                         >
-                          Comprar Ripple
+                          Buy Ripple
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/buy-bitcoin-cash/"
-                          title="Compre Bitcoin Cash"
-                          data-testid="buybtccash"
+                          href="/"
+                          title="Buy Bitcoin Cash"
                         >
-                          Compre Bitcoin Cash
+                          Buy Bitcoin Cash
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/buy-stellar-lumens/"
-                          title="Comprar Stellar"
-                          data-testid="buystellar"
+                          href="/"
+                          title="Buy Stellar"
                         >
-                          Comprar Stellar
+                          Buy Stellar
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/buy-binance-coin/"
-                          title="Comprar Binance Coin"
-                          data-testid="buybinance"
+                          href="/"
+                          title="Buy Binance Coin"
                         >
-                          Comprar Binance Coin
+                          Buy Binance Coin
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/buy-tron/"
-                          title="Comprar Tron"
-                          data-testid="buytron"
+                          href="/"
+                          title="Buy Tron"
                         >
-                          Comprar Tron
+                          Buy Tron
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/buy-dogecoin/"
-                          title="Comprar Dogecoin"
-                          data-testid="buydogecoin"
+                          href="/"
+                          title="Buy Dogecoin"
                         >
-                          Comprar Dogecoin
+                          Buy Dogecoin
                         </a>
                       </li>
                     </ul>
@@ -1003,103 +756,103 @@ export default function Paybis({ ip, socket }) {
                 </div>
                 <div className="footer-links__column mobile-links">
                   <div className="footer-links__group">
-                    <h4 className="footer-links__group-title">Vender</h4>
+                    <h4 className="footer-links__group-title">Sell</h4>
                     <ul className="footer-links__group-list">
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/sell-bitcoin/"
-                          title="Vender Bitcoin"
+                          href="/"
+                          title="Sell Bitcoin"
                           data-testid="sellbitcoin"
                         >
-                          Vender Bitcoin
+                          Sell Bitcoin
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/sell-usdt/"
-                          title="Vender USDT"
+                          href="/"
+                          title="Sell USDT"
                           data-testid="sellusdt"
                         >
-                          Vender USDT
+                          Sell USDT
                         </a>
                       </li>
                     </ul>
                   </div>
                   <div className="footer-links__group">
                     <h4 className="footer-links__group-title">
-                      Carteiras de criptomoedas
+                    Crypto wallets
                     </h4>
                     <ul className="footer-links__group-list">
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/bitcoin-wallet/"
-                          title="Carteira Bitcoin"
+                          href="/"
+                          title="Bitcoin wallet"
                           data-testid="walletbitcoin"
                         >
-                          Carteira Bitcoin
+                          Bitcoin wallet
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/binance-coin-wallet/"
-                          title="Carteira Binance Coin"
+                          href="/"
+                          title="Binance Coin wallet"
                           data-testid="walletbinancecoin"
                         >
-                          Carteira Binance Coin
+                          Binance Coin wallet
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/ethereum-wallet/"
-                          title="Carteira Ethereum"
+                          href="/"
+                          title="Ethereum wallet"
                           data-testid="walletethereum"
                         >
-                          Carteira Ethereum
+                          Ethereum wallet
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/tether-wallet/"
-                          title="Carteira Tether"
+                          href="/"
+                          title="Tether wallet"
                           data-testid="wallettether"
                         >
-                          Carteira Tether
+                          Tether wallet
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/cardano-wallet/"
-                          title="Carteira Cardano"
+                          href="/"
+                          title="Cardano wallet"
                           data-testid="walletcardano"
                         >
-                          Carteira Cardano
+                          Cardano wallet
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/dogecoin-wallet/"
-                          title="Carteira Dogecoin"
+                          href="/"
+                          title="Dogecoin wallet"
                           data-testid="walletdogecoin"
                         >
-                          Carteira Dogecoin
+                          Dogecoin wallet
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/polkadot-wallet/"
-                          title="Carteira Polkadot"
+                          href="/"
+                          title="Polkadot wallet"
                           data-testid="walletpolkadot"
                         >
-                          Carteira Polkadot
+                          Polkadot wallet
                         </a>
                       </li>
                     </ul>
@@ -1107,106 +860,106 @@ export default function Paybis({ ip, socket }) {
                 </div>
                 <div className="footer-links__column mobile-links">
                   <div className="footer-links__group">
-                    <h4 className="footer-links__group-title">Calculadora</h4>
+                    <h4 className="footer-links__group-title">Calculator</h4>
                     <ul className="footer-links__group-list">
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/bitcoin-calculator/"
-                          title="Calculadora Bitcoin"
+                          href="/"
+                          title="Bitcoin Calculator"
                           data-testid="bitcoincalc"
                         >
-                          Calculadora Bitcoin
+                          Bitcoin Calculator
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/ethereum-calculator/"
-                          title="Calculadora Ethereum"
+                          href="/"
+                          title="Ethereum Calculator"
                           data-testid="ethereumcalc"
                         >
-                          Calculadora Ethereum
+                          Ethereum Calculator
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/litecoin-calculator/"
-                          title="Calculadora Litecoin"
+                          href="/"
+                          title="Litecoin Calculator"
                           data-testid="litecoincalc"
                         >
-                          Calculadora Litecoin
+                          Litecoin Calculator
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/xrp-calculator/"
-                          title="Calculadora XRP"
+                          href="/"
+                          title="XRP Calculator"
                           data-testid="xrpcalc"
                         >
-                          Calculadora XRP
+                          XRP Calculator
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/bitcoin-cash-calculator/"
-                          title="Calculadora Bitcoin Cash"
+                          href="/"
+                          title="Bitcoin Cash Calculator"
                           data-testid="bitcoincashcalc"
                         >
-                          Calculadora Bitcoin Cash
+                          Bitcoin Cash Calculator
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/stellar-calculator/"
-                          title="Calculadora Stellar"
+                          href="/"
+                          title="Stellar Calculator "
                           data-testid="stellarcalc"
                         >
-                          Calculadora Stellar
+                          Stellar Calculator
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/binance-coin-calculator/"
-                          title="Calculadora Binance Coin"
+                          href="/"
+                          title="Binance Coin Calculator"
                           data-testid="binancecalc"
                         >
-                          Calculadora Binance Coin
+                          Binance Coin Calculator
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/dogecoin-calculator/"
-                          title="Calculadora Dogecoin"
+                          href="/"
+                          title="Dogecoin Calculator"
                           data-testid="dogecalc"
                         >
-                          Calculadora Dogecoin
+                          Dogecoin Calculator
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/tron-calculator/"
-                          title="Calculadora TRON"
+                          href="/"
+                          title="TRON Calculator"
                           data-testid="troncalc"
                         >
-                          Calculadora TRON
+                          TRON Calculator
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/tether-calculator/"
-                          title="Calculadora Tether"
+                          href="/"
+                          title="Tether Calculator"
                           data-testid="tethercalc"
                         >
-                          Calculadora Tether
+                          Tether Calculator
                         </a>
                       </li>
                     </ul>
@@ -1214,106 +967,106 @@ export default function Paybis({ ip, socket }) {
                 </div>
                 <div className="footer-links__column mobile-links">
                   <div className="footer-links__group">
-                    <h4 className="footer-links__group-title">Preços</h4>
+                    <h4 className="footer-links__group-title">Prices</h4>
                     <ul className="footer-links__group-list">
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/price/bitcoin/"
-                          title="Bitcoin Preço"
+                          href="/"
+                          title="Bitcoin Price"
                           data-testid="bitcoinprice"
                         >
-                          Bitcoin Preço
+                          Bitcoin Price
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/price/ethereum/"
-                          title="Ethereum Preço"
+                          href="/"
+                          title="Ethereum Price"
                           data-testid="ethereumprice"
                         >
-                          Ethereum Preço
+                          Ethereum Price
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/price/litecoin/"
-                          title="Litecoin Preço"
+                          href="/"
+                          title="Litecoin Price"
                           data-testid="litecoinprice"
                         >
-                          Litecoin Preço
+                          Litecoin Price
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/price/xrp/"
-                          title="XRP Preço"
+                          href="/"
+                          title="XRP Price"
                           data-testid="xrpprice"
                         >
-                          XRP Preço
+                          XRP Price
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/price/bitcoin-cash/"
-                          title="Bitcoin Cash Preço"
+                          href="/"
+                          title="Bitcoin Cash Price"
                           data-testid="bitcoincashprice"
                         >
-                          Bitcoin Cash Preço
+                          Bitcoin Cash Price
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/price/stellar/"
-                          title="Stellar Preço"
+                          href="/"
+                          title="Stellar Price"
                           data-testid="stellarprice"
                         >
-                          Stellar Preço
+                          Stellar Price
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/price/binance-coin/"
-                          title="Binance Coin Preço"
+                          href="/"
+                          title="Binance Coin Price"
                           data-testid="binanceprice"
                         >
-                          Binance Coin Preço
+                          Binance Coin Price
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/price/dogecoin/"
-                          title="Dogecoin Preço"
+                          href="/"
+                          title="Dogecoin Price"
                           data-testid="dogeprice"
                         >
-                          Dogecoin Preço
+                          Dogecoin Price
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/price/tron/"
-                          title="TRON Preço"
+                          href="/"
+                          title="TRON Price"
                           data-testid="tronprice"
                         >
-                          TRON Preço
+                          TRON Price
                         </a>
                       </li>
                       <li>
                         <a
                           className="footer-links__item"
-                          href="/pt/price/tether/"
-                          title="Tether Preço"
+                          href="/"
+                          title="Tether Price"
                           data-testid="tetherprice"
                         >
-                          Tether Preço
+                          Tether P
                         </a>
                       </li>
                     </ul>
@@ -1325,7 +1078,7 @@ export default function Paybis({ ip, socket }) {
               <div className="footer__status-page-link">
                 <a
                   className="btn btn-secondary btn-lg"
-                  href="https://status.paybis.com"
+                  href="/"
                   target="_blank"
                 >
                   <img
@@ -1333,7 +1086,7 @@ export default function Paybis({ ip, socket }) {
                     loading="lazy"
                     alt="Paybis status page"
                   />
-                  Página de status
+                  Status Page
                 </a>
               </div>
               <div className="footer__mob-app-links">
@@ -1342,7 +1095,7 @@ export default function Paybis({ ip, socket }) {
                 </h3>
                 <div className="mob-app-links-container">
                   <a
-                    href="https://go.payb.is/mobile-app?language=pt"
+                    href="/"
                     target="_blank"
                     className="footer__mob-app-link"
                   >
@@ -1354,7 +1107,7 @@ export default function Paybis({ ip, socket }) {
                     />
                   </a>
                   <a
-                    href="https://go.payb.is/mobile-app?language=pt"
+                    href="/"
                     target="_blank"
                   >
                     <img
@@ -1369,7 +1122,7 @@ export default function Paybis({ ip, socket }) {
             </div>
             <div className="footer__row">
               <div className="footer-info">
-                <h4 className="footer-info__title">Contatos</h4>
+                <h4 className="footer-info__title">Contacts</h4>
                 <ul className="footer-info__contacts">
                   <li className="footer-info__contacts-item footer-info__contacts-item--lg">
                     <a href="mailto:support@paybis.com">support@paybis.com</a>
@@ -1379,7 +1132,7 @@ export default function Paybis({ ip, socket }) {
               <div className="footer-social">
                 <a
                   className="footer-social__item footer-social__item--linkedin"
-                  href="https://www.linkedin.com/company/paybis/"
+                  href="/"
                   rel="noopener"
                   target="_blank"
                 >
@@ -1388,7 +1141,7 @@ export default function Paybis({ ip, socket }) {
                 </a>
                 <a
                   className="footer-social__item footer-social__item--twitter"
-                  href="https://twitter.com/paybis"
+                  href="/"
                   rel="noopener"
                   target="_blank"
                 >
@@ -1397,7 +1150,7 @@ export default function Paybis({ ip, socket }) {
                 </a>
                 <a
                   className="footer-social__item footer-social__item--youtube"
-                  href="https://www.youtube.com/@Paybis"
+                  href="/"
                   rel="noopener"
                   target="_blank"
                 >
@@ -1406,7 +1159,7 @@ export default function Paybis({ ip, socket }) {
                 </a>
                 <a
                   className="footer-social__item footer-social__item--instagram"
-                  href="https://www.instagram.com/paybis/"
+                  href="/"
                   rel="noopener"
                   target="_blank"
                 >
@@ -1415,7 +1168,7 @@ export default function Paybis({ ip, socket }) {
                 </a>
                 <a
                   className="footer-social__item footer-social__item--facebook"
-                  href="https://www.facebook.com/Paybis/"
+                  href="/"
                   rel="noopener"
                   target="_blank"
                 >
@@ -1431,18 +1184,12 @@ export default function Paybis({ ip, socket }) {
                 <br />
                 PAYBIS USA LTD (87-1891757), 321 S. Boston, Tulsa, OK, 74103
                 <br />
-                © 2014-2024 Paybis.com, Todos os direitos reservados.
+                © 2014-2024 Paybis.com, all rights reserved.
                 <br />
                 <br />
-                Investir em criptoativos envolve um risco significativo. Você
-                não deve investir mais do que pode se dar ao luxo de perder e
-                deve garantir que compreende totalmente os riscos envolvidos.
-                Não somos regulados pela Autoridade de Conduta Financeira e os
-                investimentos em criptoativos não são cobertos pelo Serviço de
-                Ombudsman Financeiro nem sujeitos à proteção sob o Esquema de
-                Compensação de Serviços Financeiros.
+                Investing in cryptoassets involves significant risk. You should not invest more than you can afford to lose, and you should ensure that you fully understand the risks involved. We are not regulated by the Financial Conduct Authority and investments in cryptoassets are not covered by the Financial Ombudsman Service or subject to protection under the Financial Services Compensation Scheme.
                 <a
-                  href="//www.dmca.com/Protection/Status.aspx?ID=2f92f7f5-f81e-4541-b908-fe7d31c9332b"
+                  href="/"
                   title="DMCA.com Protection Status"
                   className="dmca-badge footer__dmca-badge"
                 >

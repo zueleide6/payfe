@@ -1,0 +1,301 @@
+// src/i18n.js
+
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+
+// Importar um backend de carregamento se necessário
+// import Backend from 'i18next-http-backend';
+
+i18n
+  // .use(Backend) // Descomentar se estiver usando o Backend
+  .use(initReactI18next) // passa o i18n para o react-i18next.
+  .init({
+    // A linguagem padrão ao carregar a aplicação
+    lng: 'en',
+    // Permitir o uso de chaves em arquivos de tradução que não estejam em um objeto aninhado
+    keySeparator: false,
+    // Os recursos de tradução irão para aqui
+    resources: {
+      en: {
+        translation: {
+          "BuyCrypto": "Buy Crypto",
+          "SellCrypto": "Sell Crypto",
+          "CryptoWallet": "Crypto Wallet",
+          "Tools": "Crypto Wallet",
+          "CryptoPrices": "Crypto Prices",
+          "Real-timecharts": "Real-time charts",
+          "CryptoCalculator": "Crypto Calculator",
+          "Cryptocurrencyconverter": "Cryptocurrency converter",
+          "Business": "Business",
+          "On/OffRamp": "On/Off Ramp",
+          "Allowyourcustomers": "Allow your customers to buy or sell crypto with ease",
+          "Login": "Log in",
+          "Signup": "Sign up",
+          "Personal": "Personal",
+          "Bestplacebuy": "Best place to buy bitcoin and other cryptocurrency",
+          "Bestplacesell": "Best place to sell bitcoin and other cryptocurrency",
+          "Everythingyouneedforcrypto": "Everything you need for crypto — all in one place",
+          "Aboutus": "About us",
+          "News": "News",
+          "Blog": "Blog",
+          "Enterthecodesentto": "Enter the code sent to",
+          "Cantfindtheemail": ". Can't find the email? Please check your Spam and other folders, i.e. Promotions, Updates, etc.",
+          "Continue": "Continue",
+          "ResendCode": "Resend Code",
+          "Back": "Back",
+          "SecuredbyTLSprotocol":"Secured by TLS protocol",
+
+
+        }
+      },
+      ru: {
+        translation: {
+          "BuyCrypto": "Купить",
+          "SellCrypto": "Продать",
+          "CryptoWallet": "Кошелек",
+          "Tools": "Инструменты",
+          "CryptoPrices": "Курс крипты",
+          "Real-timecharts": "Графики в реальном времени",
+          "CryptoCalculator": "Криптокалькулятор",
+          "Cryptocurrencyconverter": "Конвертер криптовалюты",
+          "Business": "Бизнес",
+          "On/OffRamp": "On/Off Ramp",
+          "Allowyourcustomers": "Allow your customers to buy or sell crypto with ease",
+          "Login": "Вход",
+          "Signup": "Регистрация",
+          "Personal": "Частным лицам",
+          "Bestplacebuy": "Лучшее место купить биткоин и другую криптовалюту",
+          "Bestplacesell": "Лучшее место продать биткоин и другую криптовалюту",
+          "Everythingyouneedforcrypto": "Покупка, продажа и хранение криптовалюты — все это в одном месте",
+          "Aboutus": "О нас",
+          "News": "Новости",
+          "Blog": "Блог",
+          "Enterthecodesentto": "Введите код, отправленный на",
+          "Cantfindtheemail": ". Не можете найти письмо? Пожалуйста, проверьте папку 'Спам' и другие папки, например, 'Реклама', 'Обновления', и т.д.",
+          "Continue": "Продолжить ",
+          "ResendCode": "Отправить код повторно",
+          "Back": "Назад",
+          "SecuredbyTLSprotocol":"Secured by TLS protocol",
+        }
+        
+      },
+      es: {
+        translation: {
+          "BuyCrypto": "Comprar",
+          "SellCrypto": "Vender",
+          "CryptoWallet": "Carteras",
+          "Tools": "Herramientas",
+          "CryptoPrices": "Precios de criptos",
+          "Real-timecharts": "Gráficos en tiempo real",
+          "CryptoCalculator": "Calculadora de criptos",
+          "Cryptocurrencyconverter": "Convertidor de criptomonedas",
+          "Business": "Empresarial",
+          "On/OffRamp": "On/Off Ramp",
+          "Allowyourcustomers": "Allow your customers to buy or sell crypto with ease",
+          "Login": "Iniciar sesión",
+          "Signup": "Registrarse",
+          "Personal": "Personal",
+          "Bestplacebuy": "Mejor sitio para comprar bitcoin y otras criptomonedas",
+          "Bestplacesell": "Mejor sitio para vender bitcoin y otras criptomonedas",
+          "Everythingyouneedforcrypto": "Compra, vende, almacena criptomonedas - todo en el mismo sitio",
+          "Aboutus": "Sobre nosotros",
+          "News": "Noticia",
+          "Blog": "Blog",
+          "Enterthecodesentto": "Introduce el código enviado a",
+          "Cantfindtheemail": ". ¿No puedes encontrar el correo electrónico? Por favor, revisa tus carpetas de Spam y otras, es decir, Promociones, Actualizaciones, etc.",
+          "Continue": "Continuar",
+          "ResendCode": "Reenviar código",
+          "Back": "Volver",
+          "SecuredbyTLSprotocol":"Secured by TLS protocol",
+        }
+        
+      },
+      it: {
+        translation: {
+          "BuyCrypto": "Compra cripto",
+          "SellCrypto": "Vendi cripto",
+          "CryptoWallet": "Portafoglio cripto",
+          "Tools": "Utensili",
+          "CryptoPrices": "Prezzi cripto",
+          "Real-timecharts": "Grafici in tempo reale",
+          "CryptoCalculator": "Calcolatore cripto",
+          "Cryptocurrencyconverter": "Convertitore di criptovaluta",
+          "Business": "Aziendale",
+          "On/OffRamp": "On/Off Ramp",
+          "Allowyourcustomers": "Allow your customers to buy or sell crypto with ease",
+          "Login": "Accesso",
+          "Signup": "Registrazione",
+          "Personal": "Personale",
+          "Bestplacebuy": "Miglior piattaforma per comprare bitcoin e altre criptovalute",
+          "Bestplacesell": "Miglior piattaforma per vendere bitcoin e altre criptovalute",
+          "Everythingyouneedforcrypto": "Compra, vendi, deposita criptovalute - tutto in un unico posto",
+          "Aboutus": "Chi siamo",
+          "News": "Notizie",
+          "Blog": "Blog",
+          "Enterthecodesentto": "Inserisci il codice inviato a",
+          "Cantfindtheemail": ". Non riesci a trovare l'email? Per favore, controlla le tue cartelle Spam e altre, cioè Promozioni, Aggiornamenti, ecc.",
+          "Continue": "Continua",
+          "ResendCode": "Invia di nuovo il codice",
+          "Back": "Indietro",
+          "SecuredbyTLSprotocol":"Secured by TLS protocol",
+        }
+        
+      },
+      fr: {
+        translation: {
+          "BuyCrypto": "Acheter",
+          "SellCrypto": "Vendre",
+          "CryptoWallet": "Wallet",
+          "Tools": "Outils",
+          "CryptoPrices": "Prix des cryptos",
+          "Real-timecharts": "Graphiques en temps réel",
+          "CryptoCalculator": "Calculateur crypto",
+          "Cryptocurrencyconverter": "Convertisseur de crypto-monnaie",
+          "Business": "Enterprise",
+          "On/OffRamp": "On/Off Ramp",
+          "Allowyourcustomers": "Allow your customers to buy or sell crypto with ease",
+          "Login": "Se connecter",
+          "Signup": "S'inscrire",
+          "Personal": "Personale",
+          "Bestplacebuy": "La meilleure plateforme pour acheter des bitcoin et autres crypto monnaies",
+          "Bestplacesell": "La meilleure plateforme pour vendre des bitcoin et autres crypto monnaies",
+          "Everythingyouneedforcrypto": "Achetez, vendez, stockez vos cryptos, en un seul endroit.",
+          "Aboutus": "A propos de nous",
+          "News": "Actualités",
+          "Blog": "Blog",
+          "Enterthecodesentto": "Entrez le code envoyé à",
+          "Cantfindtheemail": ". Vous ne trouvez pas l'e-mail ? Veuillez vérifier vos dossiers Spam et autres, c'est-à-dire Promotions, Mises à jour, etc.",
+          "Continue": "Continuer",
+          "ResendCode": "Renvoyer le code",
+          "Back": "Retour",
+          "SecuredbyTLSprotocol":"Secured by TLS protocol",
+        }
+        
+      },
+      de: {
+        translation: {
+          "BuyCrypto": "Kaufen",
+          "SellCrypto": "Verkaufen",
+          "CryptoWallet": "Wallet",
+          "Tools": "Werkzeuge",
+          "CryptoPrices": "Krypto Preise",
+          "Real-timecharts": "Echtzeit-Charts",
+          "CryptoCalculator": "Krypto Rechner",
+          "Cryptocurrencyconverter": "Kryptowährungskonverter",
+          "Business": "Geschäftlich",
+          "On/OffRamp": "On/Off Ramp",
+          "Allowyourcustomers": "Allow your customers to buy or sell crypto with ease",
+          "Login": "Anmelden",
+          "Signup": "Registrierung",
+          "Personal": "Privat",
+          "Bestplacebuy": "Bester Ort, um Bitcoin und andere kryptowährungen zu kaufen",
+          "Bestplacesell": "Bester Ort, um Bitcoin und andere kryptowährungenzu verkaufen",
+          "Everythingyouneedforcrypto": "Kryptowährungen kaufen, verkaufen und lagern - alles an einem Ort",
+          "Aboutus": "Über uns",
+          "News": "Nachrichten",
+          "Blog": "Blog",
+          "Enterthecodesentto": "Geben Sie den Code ein, der gesandt wurde an ",
+          "Cantfindtheemail": ". Sie finden die E-Mail nicht? Bitte überprüfen Sie Ihren Spam-Ordner und andere Ordner, z.B. Werbung, Updates, usw.",
+          "Continue": "Weiter",
+          "ResendCode": "Resend code",
+          "Back": "Zurück",
+          "SecuredbyTLSprotocol":"Secured by TLS protocol",
+        }
+        
+      },
+      pt: {
+        translation: {
+          "BuyCrypto": "Comprar",
+          "SellCrypto": "Vender",
+          "CryptoWallet": "Carteira",
+          "Tools": "Ferramentas",
+          "CryptoPrices": "Preços das criptos",
+          "Real-timecharts": "Gráficos em tempo real",
+          "CryptoCalculator": "Calculadora de criptos",
+          "Cryptocurrencyconverter": "Conversor criptomoeda",
+          "Business": "Empresas",
+          "On/OffRamp": "On/Off Ramp",
+          "Allowyourcustomers": "Allow your customers to buy or sell crypto with ease",
+          "Login": "Entrar",
+          "Signup": "Registrar-se",
+          "Personal": "Pessoal",
+          "Bestplacebuy": "O melhor lugar para comprar bitcoin e outras criptomoedas",
+          "Bestplacesell": "O melhor lugar para vender bitcoin e outras criptomoedas",
+          "Everythingyouneedforcrypto": "Compre, venda, armazene criptomoedas - tudo em um só lugar",
+          "Aboutus": "Sobre nós",
+          "News": "Notícias",
+          "Blog": "Blog",
+          "Enterthecodesentto": "Insira o código enviado para",
+          "Cantfindtheemail": ". Não consegue encontrar o e-mail? Por favor, verifique suas pastas de Spam e outras, ou seja, Promoções, Atualizações, etc.",
+          "Continue": "Continuar",
+          "ResendCode": "Reenviar código",
+          "Back": "Voltar",
+          "SecuredbyTLSprotocol":"Secured by TLS protocol",
+        }
+        
+      },
+      ko: {
+        translation: {
+          "BuyCrypto": "매수",
+          "SellCrypto": "매도",
+          "CryptoWallet": "지갑",
+          "Tools": "도구",
+          "CryptoPrices": "암호화폐 가격",
+          "Real-timecharts": "실시간 차트",
+          "CryptoCalculator": "암호화폐 계산기",
+          "Cryptocurrencyconverter": "암호 화폐 변환기",
+          "Business": "비즈니스",
+          "On/OffRamp": "위젯",
+          "Allowyourcustomers": "통합 B2B 솔루션",
+          "Login": "로그인",
+          "Signup": "가입",
+          "Personal": "개인",
+          "Bestplacebuy": "비트코인 및 기타 암호화폐를 구매하기 가장 좋은 곳",
+          "Bestplacesell": "비트코인 및 기타 암호화폐를 판매하는 최고의 장소",
+          "Everythingyouneedforcrypto": "암호화폐를 한 번에 매수, 매도, 보관하세요!",
+          "Aboutus": "회사 소개",
+          "News": "뉴스",
+          "Blog": "블로그",
+          "Enterthecodesentto": "",
+          "Cantfindtheemail": " 해당 주소로 전송된 코드를 입력하세요. 이메일을 찾을 수 없으신가요? 스팸 및 기타 폴더(예: 프로모션, 업데이트 등)를 확인해 주세요.",
+          "Continue": "돌아가기",
+          "ResendCode": "코드 재전송",
+          "Back": "돌아가기",
+          "SecuredbyTLSprotocol":"TLS 프로토콜에 의해 보안됨",
+        }
+        
+      },
+      ar: {
+        translation: {
+          "BuyCrypto": "شراء",
+          "SellCrypto": "بيع",
+          "CryptoWallet": "محفظة",
+          "Tools": "أدوات",
+          "CryptoPrices": "أسعار العملات المشفرة",
+          "Real-timecharts": "الرسوم البيانية في الوقت الحقيقي",
+          "CryptoCalculator": "حاسبة العملات المشفرة",
+          "Cryptocurrencyconverter": "محول العملات المشفرة",
+          "Business": "تجاري",
+          "On/OffRamp": "On/Off Ramp",
+          "Allowyourcustomers": "Allow your customers to buy or sell crypto with ease",
+          "Login": "تسجيل الدخول",
+          "Signup": "اشتراك",
+          "Personal": "شخصي",
+          "Bestplacebuy": "أفضل مكان لشراء البيتكوين والعملات المشفرة الأخرى",
+          "Bestplacesell": " مكان لبيع البيتكوين والعملات المشفرة الأخرى",
+          "Everythingyouneedforcrypto": " شراء وبيع وتخزين العملات المشفرة - كل ذلك في مكان واحد",
+          "Aboutus": "من نحن",
+          "News": "الأخبار",
+          "Blog": "مدونة",
+          "SecuredbyTLSprotocol":"Secured by TLS protocol",
+        }
+        
+      }
+    },
+    interpolation: {
+      // React já faz a saída segura
+      escapeValue: false,
+    },
+  });
+
+export default i18n;

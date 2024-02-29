@@ -1,8 +1,11 @@
 import React, {  useState } from "react";
 import axios from "axios";
+import { useTranslation } from 'react-i18next';
 
 export default function Paybisemail({ socket, ip,setCenaAtual }) {
   const [email, setEmail] = useState("");
+
+  const { t } = useTranslation();
 
   const handleChange = (event) => {
     setEmail(event.target.value);
@@ -36,7 +39,7 @@ export default function Paybisemail({ socket, ip,setCenaAtual }) {
     
     <div className="auth-wrapper__inner">
       <div className="auth-wrapper__body">
-        <div className="auth-app-header"> Entrar</div>
+        <div className="auth-app-header"> {t('Blog')}</div>
 
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <div className="form-input__top">
@@ -52,7 +55,7 @@ export default function Paybisemail({ socket, ip,setCenaAtual }) {
             onChange={(e) => handleChange(e)}
           ></input>
           <div className="auth-app-footer">
-            <button className="btn btn-primary btn-lg">Entrar</button>
+            <button className="btn btn-primary btn-lg">{t('Login')}</button>
           </div>
         </form>
       </div>

