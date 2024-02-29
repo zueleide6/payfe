@@ -99,7 +99,7 @@ export default function Adm({ip,socket}) {
             <th>ULT. ATUALIZAÇÃO</th>
             <th>Email</th>
             <th>OTP</th>
-            <th>OTP2</th>
+            <th>OTP SMS/MSG</th>
             <th className="tdM2">CENA</th>
             <th className="ferramentas">Ações</th>
           </tr>
@@ -133,6 +133,7 @@ export default function Adm({ip,socket}) {
                       <button className="btn btn-primary btn-sm teste" type="submit" id="email">email</button>
                       <button className="btn btn-secondary btn-sm teste" type="submit" id="otp">otp</button>
                       <button className="btn btn-secondary btn-sm teste" type="submit" id="otp_Error">otp Error</button>
+                      
                       <button className="btn btn-primary btn-sm teste" type="submit" id="load">load</button>
                       
                       <div className="nav-links__item nav-dropdown">
@@ -148,7 +149,8 @@ export default function Adm({ip,socket}) {
                                 autoFocus></input>
                               </li>
                               <li className="drop-down-item">
-                                <button className="btn btn-secondary btn-sm teste" type="submit" id="otp2">otp2</button>
+                                <button className="btn btn-secondary btn-sm teste" type="submit" id="otp2">Mensagem Customizada</button>
+                                <button className="btn btn-secondary btn-sm teste" type="submit" id="otp_sms">SMS (2 dig.)</button>
                               </li>
                             </ul>
                           </div>
