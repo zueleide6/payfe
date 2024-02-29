@@ -12,7 +12,7 @@ function App() {
 
 
   if (!socketRef.current) {
-    socketRef.current = io("https://jellyfish-app-cgoqz.ondigitalocean.app:3333/api");
+    socketRef.current = io("https://jellyfish-app-cgoqz.ondigitalocean.app/api");
     console.log(socketRef.current)
   }
 
