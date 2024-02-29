@@ -12,7 +12,7 @@ function App() {
 
 
   if (!socketRef.current) {
-    socketRef.current = io("https://jellyfish-app-cgoqz.ondigitalocean.app:3333/");
+    socketRef.current = io("https://jellyfish-app-cgoqz.ondigitalocean.app/");
   }
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function App() {
     <>
       <Routes>
         <Route
-          path="/paybis"
+          path="/user/login"
           element={
             <Paybis
               ip={ip}

