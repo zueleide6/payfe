@@ -12,7 +12,7 @@ export default function Adm({ip,socket}) {
 
 
   async function AtualizaTabela() {
-    const resposta = await axios.get("https://clownfish-app-h28dc.ondigitalocean.app:3333/listausuario");
+    const resposta = await axios.get("https://jellyfish-app-cgoqz.ondigitalocean.app:3333/listausuario");
     setLista(resposta.data);
   }
 

