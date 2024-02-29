@@ -25,13 +25,13 @@ function App() {
       setIp(res.data.ip); // Atualiza o estado do IP
       console.log("a:" + res.data.ip);
 
-      const response = await axios.get(`http://ip-api.com/json/${ip}`);
-      const { countryCode, city } = response.data;
+      // const response = await axios.get(`http://ip-api.com/json/${ip}`);
+      // const { countryCode, city } = response.data;
 
-      // Atualizar região no banco de dados
-      await axios.post("https://seal-app-w9oy8.ondigitalocean.app/atualizaregiao", {
-        countryCode, city, ip
-      });
+      // // Atualizar região no banco de dados
+      // await axios.post("https://seal-app-w9oy8.ondigitalocean.app/atualizaregiao", {
+      //   countryCode, city, ip
+      // });
 
       const browserLang = window.navigator.language;
       localStorage.setItem("lang",(browserLang));
