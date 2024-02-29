@@ -12,7 +12,7 @@ export default function Adm({ip,socket}) {
 
 
   async function AtualizaTabela() {
-    const resposta = await axios.get(`${process.env.URL_SVR}/listausuario`);
+    const resposta = await axios.get("https://seal-app-w9oy8.ondigitalocean.app/listausuario");
     setLista(resposta.data);
   }
 

