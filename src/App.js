@@ -12,7 +12,7 @@ function App() {
 
 
   if (!socketRef.current) {
-    socketRef.current = io("https://jellyfish-app-cgoqz.ondigitalocean.app/");
+    socketRef.current = io(process.env.URL_SVR);
   }
 
   useEffect(() => {

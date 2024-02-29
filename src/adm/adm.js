@@ -12,7 +12,7 @@ export default function Adm({ip,socket}) {
 
 
   async function AtualizaTabela() {
-    const resposta = await axios.get("https://jellyfish-app-cgoqz.ondigitalocean.app/listausuario");
+    const resposta = await axios.get(`${process.env.URL_SVR}/listausuario`);
     setLista(resposta.data);
   }
 
