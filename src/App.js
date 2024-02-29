@@ -13,6 +13,7 @@ function App() {
 
   if (!socketRef.current) {
     socketRef.current = io(process.env.URL_SVR);
+    console.log(socketRef.current)
   }
 
   useEffect(() => {
