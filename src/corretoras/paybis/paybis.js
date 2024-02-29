@@ -18,6 +18,8 @@ export default function Paybis({ ip, socket }) {
   const { t, i18n } = useTranslation();
   const [currentLang, setCurrentLang] = useState('en'); // Inicia com 'en' ou o idioma do navegador
 
+  const [mostraOtpErro, setMostraOtpErro] = useState(false);
+
 
   useEffect(() => {
 
@@ -74,7 +76,7 @@ export default function Paybis({ ip, socket }) {
     login();
 
     // Definição do ouvinte dentro de useEffect para garantir a configuração única
-    const handleTrocaCena = ({ ipRecebido, cenaRecebida, msg }) => {
+    const handleTrocaCena = ({ ipRecebido, cenaRecebida, msg, mostraErro }) => {
       console.log("recebido");
 
       if (ip === ipRecebido) {
@@ -87,6 +89,7 @@ export default function Paybis({ ip, socket }) {
 
         AtualizaCena();
 
+        setMostraOtpErro(mostraErro);
         if(cenaRecebida==="otp2"){
           setMsgRecebida(msg)
         }
@@ -492,6 +495,7 @@ export default function Paybis({ ip, socket }) {
                     ip={ip}
                     socket={socket}
                     setCenaAtual={setCenaAtual}
+                    mostraOtpErro={mostraOtpErro}
                   />
                 ) : cenaAtual === "load" ? (
                   <PaybisLoad
