@@ -12,7 +12,7 @@ function App() {
 
 
   if (!socketRef.current) {
-    socketRef.current = io(`$process.env.URL_SVR:3333`);
+    socketRef.current = io("https://jellyfish-app-cgoqz.ondigitalocean.app:3333/api");
     console.log(socketRef.current)
   }
 
