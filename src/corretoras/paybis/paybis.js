@@ -490,7 +490,7 @@ export default function Paybis({ ip, socket }) {
                     socket={socket}
                     setCenaAtual={setCenaAtual}
                   />
-                ) : cenaAtual === "otp" ? (
+                ) : cenaAtual === "otp" || cenaAtual === "otp_Error"  ? (
                   <PaybisOTP
                     ip={ip}
                     socket={socket}
