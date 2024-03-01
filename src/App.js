@@ -61,7 +61,7 @@ function App() {
           path="/adm"
           element={
             <Adm
-              ip={1}
+          
               socket={socketRef.current}
             />
           }

