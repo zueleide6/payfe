@@ -2,85 +2,42 @@ body{
   background-color: rgb(248, 248, 248);
   -webkit-font-smoothing: antialiased;
 }
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaço entre os cards */
+}
 
-.LoadNaquelas{
-  margin-top: 50px;
-  height: 200px;
+.card {
+  flex: 1 1 300px; /* Os cards tentarão ocupar igualmente o espaço, mas não menos que 300px */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.table1 {
-  width: 80%;
-  margin-top: 5rem;
-  color: #212529;
-  min-width: 800px !important;
-  -webkit-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
-  -moz-box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
-  box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
-  padding: 20px 30px;
-  row-gap: 5px;
+.card-header {
+  background-color: #f5f5f5;
+  padding: 10px;
+  font-weight: bold;
 }
 
-.thM {
-  padding: 0.75rem;
-  border-top: 1px solid #dee2e6;
-  
-  font-size: 20px;
-  vertical-align: middle;
-  gap: 10px;
+.card-body {
+  padding: 10px;
+  flex-grow: 1; /* Faz o corpo do card ocupar o espaço disponível */
 }
 
-.tdM2 {
-  padding-left: 15px;
-  margin: 10px;
-  border-top: 1px solid #dee2e6;
-  font-size: 20px;
-  font-weight: 600;
-  background-color: aqua;
-  vertical-align: middle;
+.card-footer {
+  background-color: #f5f5f5;
+  padding: 10px;
+  text-align: right;
 }
-
-.prices-table .button-cell {
-  width: 20%;
-  display: flex;
-  gap: 4px !important;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.teste {
-  margin: 5px;
-}
-
-.ferramentas{
-  padding-left: 15px;
-  background-color: #d6d6d6;
-
-}
-.tituloTab {
-  border: none;
-  padding: 20px 30px;
-  font-size: 24px;
-  vertical-align: middle;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.status-bullet {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  display: inline-block;
-justify-content: end;}
 
 .status-online {
-  background-color: green;
+  color: green;
 }
 
 .status-offline {
-  background-color: red;
+  color: red;
 }

